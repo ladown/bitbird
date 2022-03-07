@@ -1,0 +1,12 @@
+include settings.pug
+
+section.consultation
+  .consultation__wrap
+    .consultation__label Услуги
+    .consultation__descr
+      h2.consultation__title Нужна консультация?
+      p.consultation__subtitle Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации новых предложений.
+      a.consultation__btn(href="#") Перейти
+  picture.consultation__bg
+    source(srcset=`${imgPath}card/card-consultation/card-consultation-bg-mob.jpg` media="(max-width: 768px)")
+    img(src=`${imgPath}card/card-consultation/card-consultation-bg.jpg` alt="card-consultation-bg" loading="lazy")

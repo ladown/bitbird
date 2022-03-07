@@ -1,0 +1,35 @@
+@import "./service-office.scss";
+@import "./service-promo.scss";
+@import "./service-price.scss";
+@import "./service-seo.scss";
+@import "./service-steps.scss";
+@import "./service-conditions.scss";
+@import "./service-feedback.scss";
+@import "./service-forms.scss";
+@import "./service-includes.scss";
+@import "./service-label.scss";
+@import "./service-person.scss";
+
+.service-page {
+  .content {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+    @include to(1024px) {
+      padding: 30px 0;
+    }
+  }
+  .makers {
+    margin-top: 25px;
+    @include to(1024px) {
+      margin-top: 15px;
+    }
+  }
+  &.service-mining {
+    .content {
+      padding: 60px 0 0 0;
+      @include to(1024px) {
+        padding: 30px 0 0 0;
+      }
+    }
+  }
+}

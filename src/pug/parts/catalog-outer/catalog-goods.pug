@@ -1,0 +1,8 @@
+section.catalog-goods
+  .catalog-goods__wrap
+    .catalog-goods__header
+      h1.catalog-goods__title Каталог товаров
+      p.catalog-goods__count 3 674 товара
+    .catalog-goods__content
+      each good in catalogGoods
+        +category(good)

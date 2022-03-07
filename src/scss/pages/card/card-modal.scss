@@ -1,0 +1,147 @@
+.card-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  z-index: 1001;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+  &--opened {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #303239;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+    .card-modal--opened & {
+      opacity: 0.65;
+      visibility: visible;
+      pointer-events: all;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  }
+  &__wrap {
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 50px;
+    z-index: 2;
+    top: -100%;
+    transform: translateY(-100%);
+    transition: all 0.3s;
+    .card-modal--opened & {
+      top: 0%;
+      transform: translateY(0%);
+      transition: all 0.3s;
+    }
+    @include to(1200px) {
+      padding: 40px;
+    }
+    @include to(1024px) {
+      padding: 30px;
+    }
+    @include to(768px) {
+      padding: 25px 20px;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: #6f5cea;
+    @include to(1200px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+    @include to(1024px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    @include to(768px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include to(576px) {
+      text-align: center;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__btns {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-flow: row nowrap;
+    @include to(1024px) {
+      margin-top: 30px;
+    }
+    @include to(576px) {
+      max-width: 300px;
+      margin-top: 20px;
+      flex-flow: column nowrap;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    flex: 0 1 100%;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    transition: background 0.3s;
+    border-radius: 5px;
+    @include to(1024px) {
+      padding: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include to(576px) {
+      flex: auto;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &:hover {
+      background-color: #bfc5f9;
+      transition: background 0.3s;
+    }
+    &_light {
+      background-color: #6f5cea;
+      margin-right: 10px;
+      @include to(576px) {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+    }
+    &_dark {
+      background-color: #b8b7b7;
+    }
+  }
+}

@@ -1,0 +1,704 @@
+.basket-page {
+  .content {
+    padding: 60px 0 80px 0;
+    background-color: #f5f5f5;
+    @include to(1200px) {
+      padding: 50px 0 70px 0;
+    }
+    @include to(1024px) {
+      padding: 40px 0 60px 0;
+    }
+    @include to(768px) {
+      padding: 30px 0 50px 0;
+    }
+    @include to(576px) {
+      padding: 20px 0 40px 0;
+    }
+  }
+}
+
+.basket {
+  &__wrap {
+    @include wrap;
+  }
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    margin-right: 25px;
+    @include to(1200px) {
+      margin-top: 5px;
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      margin-top: 10px;
+      margin-right: 20px;
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      margin-top: 15px;
+      margin-right: 15px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      margin-top: 20px;
+      margin-right: 12px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__count {
+    margin: 5px 0 7px 0;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #989898;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include to(576px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+  &__interaction {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(1024px) {
+      margin-top: 20px;
+    }
+    @include to(576px) {
+      margin-top: 15px;
+      flex-flow: column nowrap;
+      align-items: initial;
+    }
+  }
+  &__back {
+    margin-right: 180px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #b8b7b7;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    transition: color 0.3s;
+    @include to(1200px) {
+      margin-right: 150px;
+    }
+    @include to(1024px) {
+      margin-right: 25px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+    @include to(576px) {
+      margin-right: 0;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+    svg {
+      margin-right: 15px;
+    }
+    path {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      color: #6f5cea;
+      transition: color 0.3s;
+      path {
+        fill: #6f5cea;
+        transition: fill 0.3s;
+      }
+    }
+  }
+  &__clean {
+    width: fit-content;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #b8b7b7;
+    transition: color 0.3s;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    @include to(576px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &:hover {
+      color: #6f5cea;
+      transition: color 0.3s;
+    }
+  }
+  &__content {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 30px;
+    @include to(1200px) {
+      grid-template-columns: 1fr 300px;
+    }
+    @include to(1024px) {
+      grid-template-columns: 1fr 250px;
+      margin-top: 20px;
+      gap: 20px;
+    }
+    @include to(576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 100px 150px;
+    border-right: 1.5px solid #e4e4e4;
+    @include to(1200px) {
+      gap: 75px 115px;
+    }
+    @include to(1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding-right: 20px;
+    }
+    @include to(810px) {
+      grid-template-columns: 1fr;
+    }
+    @include to(576px) {
+      border-right: unset;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-right: 40px;
+    position: relative;
+    @include to(1024px) {
+      padding-right: 20px;
+    }
+    @include to(810px) {
+      padding: 30px 20px 30px 0;
+    }
+    &:first-child {
+      @include to(810px) {
+        padding-top: 0;
+      }
+    }
+    &:last-child {
+      @include to(810px) {
+        padding-bottom: 0;
+      }
+    }
+    &:not(:last-child) {
+      @include to(810px) {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% - 100px);
+          height: 1.5px;
+          background-color: #e4e4e4;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 1.5px;
+      left: 100%;
+      top: 50%;
+      background-color: #e4e4e4;
+      transform: translateX(-50%) rotate(90deg);
+      @include to(1024px) {
+        width: 50%;
+      }
+    }
+    &-img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      max-width: 200px;
+      max-height: 150px;
+      @include to(576px) {
+        max-width: 150px;
+        max-height: 100px;
+      }
+      img {
+        border-radius: 10px;
+        display: block;
+        @include cover;
+      }
+    }
+    &-descr {
+      display: flex;
+      height: 100%;
+      flex-flow: column nowrap;
+      margin-top: 30px;
+      @include to(1024px) {
+        margin-top: 20px;
+      }
+      @include to(576px) {
+        margin-top: 10px;
+      }
+    }
+    &-caption {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #303239;
+      transition: color 0.3s;
+      @include to(1024px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+      &:hover {
+        color: #6f5cea;
+        transition: color 0.3s;
+      }
+    }
+    &-counter {
+      margin: 30px 0 30px 0;
+      display: flex;
+      flex-flow: row nowrap;
+      @include to(1024px) {
+        margin: 15px 0;
+      }
+      &-btn {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 4px rgba(158, 158, 158, 0.25);
+        border-radius: 5px;
+        transition: background 0.3s;
+        @include to(1024px) {
+          width: 35px;
+          height: 35px;
+          padding: 10px;
+        }
+        svg {
+          max-width: 100%;
+        }
+        rect {
+          transition: fill 0.3s;
+        }
+        &:hover {
+          background-color: #6f5cea;
+          transition: background 0.3s;
+          rect {
+            fill: #fff;
+            transition: fill 0.3s;
+          }
+        }
+      }
+      &-input {
+        width: 100%;
+        max-width: 75px;
+        text-align: center;
+        outline: none;
+        border: none;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 10px 5px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        color: #303239;
+        @include to(1024px) {
+          padding: 6px 5px;
+          max-width: 50px;
+        }
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+    &-count {
+      margin-bottom: 2px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #b8b7b7;
+      @include to(1024px) {
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @include to(576px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+    &-price {
+      margin-top: auto;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 28px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-remove {
+      position: absolute;
+      right: -21px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      @include to(1024px) {
+        padding: 5px;
+        right: -16px;
+      }
+      rect {
+        transition: fill 0.3s;
+      }
+      &:hover {
+        rect {
+          fill: #6f5cea;
+          transition: fill 0.3s;
+        }
+      }
+    }
+  }
+  .basket-total {
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: fit-content;
+    &__upper {
+      padding: 40px;
+      background-color: #6f5cea;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      @include to(1024px) {
+        padding: 20px 30px;
+      }
+    }
+    &__icon {
+      @include to(1200px) {
+        max-width: 50px;
+        height: auto;
+      }
+      @include to(1024px) {
+        max-width: 45px;
+      }
+      @include to(768px) {
+        max-width: 40px;
+      }
+      @include to(576px) {
+        max-width: 35px;
+      }
+    }
+    &__header {
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 31px;
+      color: #ffffff;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 28px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &__subheader {
+      margin-top: 5px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+      @include to(1024px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &__block {
+      padding: 30px;
+      @include to(1024px) {
+        padding: 20px 30px;
+      }
+      @include to(576px) {
+        padding: 20px 0 0 0;
+      }
+    }
+    &__key {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #303239;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        padding: 0 30px;
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &__value {
+      margin-top: 6px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        margin-top: 8px;
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        padding: 0 30px;
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      width: 100%;
+      padding: 18px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+      background-color: #6f5cea;
+      border-radius: 5px;
+      transition: background 0.3s;
+      @include to(1024px) {
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @include to(576px) {
+        font-size: 14px;
+        line-height: 18px;
+        border-radius: 0px 0px 5px 5px;
+      }
+      &:hover {
+        background-color: #bfc5f9;
+        transition: background 0.3s;
+      }
+    }
+  }
+}
+
+.basket-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  z-index: 1001;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+  &--opened {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #303239;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+    .basket-modal--opened & {
+      opacity: 0.65;
+      visibility: visible;
+      pointer-events: all;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  }
+  &__wrap {
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 50px;
+    z-index: 2;
+    top: -100%;
+    transform: translateY(-100%);
+    transition: all 0.3s;
+    .basket-modal--opened & {
+      top: 0%;
+      transform: translateY(0%);
+      transition: all 0.3s;
+    }
+    @include to(1200px) {
+      padding: 40px;
+    }
+    @include to(1024px) {
+      padding: 30px;
+    }
+    @include to(768px) {
+      padding: 25px 20px;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: #6f5cea;
+    @include to(1200px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+    @include to(1024px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    @include to(768px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include to(576px) {
+      text-align: center;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__btns {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-flow: row nowrap;
+    @include to(1024px) {
+      margin-top: 30px;
+    }
+    @include to(576px) {
+      max-width: 300px;
+      margin-top: 20px;
+      flex-flow: column nowrap;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    flex: 0 1 100%;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    transition: background 0.3s;
+    border-radius: 5px;
+    @include to(1024px) {
+      padding: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include to(576px) {
+      flex: auto;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &:hover {
+      background-color: #bfc5f9;
+      transition: background 0.3s;
+    }
+    &_light {
+      background-color: #6f5cea;
+      margin-right: 10px;
+      @include to(576px) {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+    }
+    &_dark {
+      background-color: #b8b7b7;
+    }
+  }
+}

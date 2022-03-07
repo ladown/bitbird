@@ -1,0 +1,90 @@
+.makers {
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 40px;
+      line-height: 46px;
+    }
+    @include to(1024px) {
+      font-size: 34px;
+      line-height: 41px;
+    }
+    @include to(768px) {
+      font-size: 28px;
+      line-height: 35px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__slider {
+    &-outer {
+      background-color: #ffffff;
+      border-radius: 10px;
+      position: relative;
+      padding: 32px 100px;
+      @include to(1024px) {
+        padding: 15px 35px;
+      }
+    }
+  }
+  &__slide {
+    width: auto;
+    height: auto;
+    margin: auto 0;
+    display: flex;
+    img {
+      display: block;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+  &__btn {
+    display: flex;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    svg {
+      @include to(576px) {
+        max-width: 10px;
+      }
+    }
+    path {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      path {
+        fill: #bfc5f9;
+        transition: fill 0.3s;
+      }
+    }
+    &-prev {
+      left: 20px;
+      right: auto;
+      @include to(1024px) {
+        left: 10px;
+      }
+      @include to(576px) {
+        left: 5px;
+      }
+    }
+    &-next {
+      right: 20px;
+      left: auto;
+      @include to(1024px) {
+        right: 10px;
+      }
+      @include to(1024px) {
+        right: 5px;
+      }
+    }
+  }
+}

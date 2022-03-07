@@ -1,0 +1,768 @@
+.card-descr {
+  @include wrap;
+  margin-top: 50px;
+  @include to(1024px) {
+    margin-top: 25px;
+  }
+  &__wrap {
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    @include to(1024px) {
+      background: unset;
+      border-radius: unset;
+      padding: 0;
+    }
+  }
+  &__tabs {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 5px;
+    .swiper-wrapper {
+      transform: unset;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      &.locked {
+        transform: unset !important;
+      }
+      @include to(576px) {
+        flex-flow: initial;
+        align-items: initial;
+        justify-content: initial;
+      }
+    }
+  }
+  &__tab {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #303239;
+    position: relative;
+    transition: all 0.3s;
+    width: fit-content;
+    @include to(1024px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @include to(768px) {
+      padding: 5px;
+      flex: initial;
+      width: fit-content;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      line-height: 18px;
+      background-image: linear-gradient(90deg, rgba(51, 51, 51, 0) 100%, #333333 100%);
+      color: unset;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &.swiper-slide-prev {
+      @include to(576px) {
+        background-image: linear-gradient(90deg, rgba(51, 51, 51, 0) 15%, #333333 100%);
+        transition: all 0.3s;
+      }
+    }
+    &.swiper-slide-next {
+      @include to(576px) {
+        background-image: linear-gradient(90deg, #333333 0.98%, rgba(51, 51, 51, 0) 100%);
+        transition: all 0.3s;
+      }
+    }
+    &.swiper-slide-active {
+      @include to(576px) {
+        background: unset;
+        color: #303239;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        transition: all 0.3s;
+      }
+      &::before {
+        max-width: 100%;
+        transition: max-width 0.3s;
+      }
+    }
+    &:not(:last-child) {
+      @include to(800px) {
+        margin-right: 15px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      max-width: 0;
+      background-color: #6f5cea;
+      border-radius: 100px;
+      transition: max-width 0.3s;
+    }
+    &:hover {
+      &::before {
+        max-width: 100%;
+        transition: max-width 0.3s;
+      }
+    }
+    &--active {
+      &::before {
+        max-width: 100%;
+        transition: max-width 0.3s;
+      }
+    }
+  }
+  &__content {
+    margin-top: 50px;
+    @include to(1200px) {
+      margin-top: 40px;
+    }
+    @include to(1024px) {
+      margin-top: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 35px;
+    }
+    @include to(768px) {
+      padding: 25px;
+      margin-top: 20px;
+    }
+    @include to(576px) {
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
+    &--show {
+      display: block;
+      animation: fadeInUp 0.3s;
+    }
+    &--hide {
+      display: none;
+    }
+  }
+  &__info {
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+        @include to(1024px) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      margin-bottom: 25px;
+      @include to(1024px) {
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 106.5%;
+      }
+    }
+    &-text {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #303239;
+      @include to(1024px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      b,
+      strong {
+        font-weight: bolder;
+      }
+    }
+  }
+  &__specs {
+    &-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      @include to(768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &-item {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #303239;
+      @include to(1024px) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 25px;
+        @include to(1024px) {
+          margin-bottom: 15px;
+        }
+      }
+      span {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #b8b7b7;
+        @include to(1024px) {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+  &__delivery {
+    &-item {
+      padding: 20px 0;
+      @include to(1024px) {
+        padding: 10px 0;
+      }
+      &:not(:last-child) {
+        border-bottom: 1.5px solid #e4e4e4;
+      }
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    &-header {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-subheader {
+      margin-top: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #b8b7b7;
+      @include to(1024px) {
+        margin-top: 7px;
+        font-size: 14px;
+      }
+    }
+    &-cost {
+      margin-top: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #b8b7b7;
+      @include to(1024px) {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      span {
+        font-weight: 500;
+        color: #6f5cea;
+      }
+    }
+  }
+  &__feedback {
+    &-items {
+      &--opened {
+        .card-descr__feedback-item {
+          @include to(1024px) {
+            display: block !important;
+            animation: fadeIn 0.3s;
+          }
+        }
+      }
+    }
+    &-item {
+      border-bottom: 1.5px solid #e4e4e4;
+      @include to(1024px) {
+        display: none;
+      }
+      &:not(:first-child) {
+        padding: 20px 0;
+        @include to(1024px) {
+          padding: 10px 0;
+        }
+      }
+      &:first-child {
+        padding-bottom: 20px;
+        @include to(1024px) {
+          padding-bottom: 10px;
+        }
+      }
+      &:nth-child(-n + 3) {
+        @include to(1024px) {
+          display: block;
+        }
+      }
+      &-btn {
+        display: none;
+        margin: 15px auto 0 auto;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: #6f5cea;
+        transition: color 0.3s;
+        @include to(1024px) {
+          display: flex;
+        }
+        @include to(576px) {
+          font-size: 16px;
+          line-height: 22px;
+        }
+        &:hover {
+          color: #bfc5f9;
+          transition: color 0.3s;
+        }
+      }
+    }
+    &-name {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1024px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(768px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(576px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+    }
+    &-rating {
+      margin-top: 10px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      @include to(1024px) {
+        margin-top: 5px;
+      }
+      a {
+        display: flex;
+        &:not(:last-child) {
+          margin-right: 15px;
+          @include to(1024px) {
+            margin-right: 10px;
+          }
+        }
+        svg {
+          height: auto;
+          fill: #b8b7b7;
+          @include to(1024px) {
+            max-width: 15px;
+          }
+          @include to(576px) {
+            max-width: 12px;
+          }
+          &.active {
+            fill: #ffb11a;
+          }
+        }
+      }
+    }
+    &-text {
+      margin-top: 35px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #b8b7b7;
+      @include to(1024px) {
+        margin-top: 25px;
+        font-size: 14px;
+      }
+      @include to(576px) {
+        margin-top: 15px;
+      }
+    }
+    &-date {
+      margin-top: 30px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #b8b7b7;
+      @include to(1024px) {
+        margin-top: 15px;
+      }
+    }
+    &-form {
+      width: 100%;
+      max-width: 800px;
+      margin: 45px auto 0 auto;
+      @include to(1024px) {
+        margin: 0;
+        max-width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        padding: 20px;
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      @include to(576px) {
+        padding: 10px;
+      }
+      &.card-descr__feedback--opened {
+        @include to(1024px) {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
+      }
+      &-overlay {
+        @include to(1024px) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #303239;
+          z-index: 1;
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s, visibility 0.3s;
+          .card-descr__feedback--opened & {
+            opacity: 0.65;
+            visibility: visible;
+            pointer-events: all;
+            transition: opacity 0.3s, visibility 0.3s;
+          }
+        }
+      }
+      &-wrap {
+        @include to(1024px) {
+          margin: auto;
+          display: flex;
+          flex-flow: column nowrap;
+          width: 100%;
+          max-width: 800px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          padding: 25px 20px;
+          z-index: 2;
+          top: -100%;
+          transform: translateY(-100%);
+          transition: all 0.3s;
+          .card-descr__feedback--opened & {
+            top: 0%;
+            transform: translateY(0%);
+            transition: all 0.3s;
+          }
+        }
+      }
+      &-close {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        @include to(1024px) {
+          display: flex;
+        }
+        @include to(576px) {
+          padding: 5px;
+          top: 15px;
+          right: 15px;
+        }
+        svg {
+          pointer-events: none;
+          max-width: 25px;
+          height: auto;
+        }
+        rect {
+          transition: fill 0.3s;
+        }
+        &:hover {
+          rect {
+            fill: #6f5cea;
+            transition: fill 0.3s;
+          }
+        }
+      }
+      &-btn {
+        margin: 20px auto 0 auto;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+        background-color: #6f5cea;
+        border-radius: 5px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+        transition: background 0.3s;
+        @include to(1024px) {
+          display: flex;
+        }
+        @include to(576px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
+        &:hover {
+          background-color: #bfc5f9;
+          transition: background 0.3s;
+        }
+      }
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      margin-bottom: 15px;
+      @include to(1024px) {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 26px;
+      }
+      @include to(768px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @include to(576px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+    &-stars {
+      .stars span {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      span[data-total-value="1"] a:nth-child(n + 5) svg,
+      span[data-total-value="2"] a:nth-child(n + 4) svg,
+      span[data-total-value="3"] a:nth-child(n + 3) svg,
+      span[data-total-value="4"] a:nth-child(n + 2) svg,
+      span[data-total-value="5"] a:nth-child(n + 1) svg {
+        fill: #ffb11a;
+        transition: fill 0.3s;
+      }
+      svg {
+        fill: #b8b7b7;
+        height: auto;
+        transition: fill 0.3s;
+        @include to(1024px) {
+          max-width: 15px;
+        }
+        @include to(576px) {
+          max-width: 12px;
+        }
+      }
+      a {
+        display: flex;
+        &:not(:last-child) {
+          margin-left: 15px;
+          @include to(1024px) {
+            margin-left: 10px;
+          }
+        }
+        &:hover,
+        &:hover ~ a {
+          svg {
+            fill: #ffb11a;
+            transition: fill 0.3s;
+          }
+        }
+      }
+    }
+    &-inputs {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 45px;
+      @include to(1200px) {
+        gap: 25px 35px;
+      }
+      @include to(1024px) {
+        margin-top: 30px;
+        gap: 25px;
+      }
+      @include to(768px) {
+        gap: 15px;
+        margin-top: 20px;
+      }
+      @include to(576px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &-input {
+      input {
+        width: 100%;
+        height: 100%;
+        border: 1.5px solid #e4e4e4;
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 126.19%;
+        color: #303239;
+        &::placeholder {
+          color: #b8b7b7;
+        }
+      }
+    }
+    &-textarea {
+      grid-column: span 2;
+      grid-row: 2 / 3;
+      @include to(576px) {
+        grid-column: initial;
+        grid-row: initial;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        resize: none;
+        border: 1.5px solid #e4e4e4;
+        border-radius: 3px;
+        padding: 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 126.19%;
+        color: #303239;
+        transition: outline 0.3s;
+        &::placeholder {
+          color: #b8b7b7;
+        }
+        &:focus {
+          outline-color: #6f5cea;
+          transition: outline 0.3s;
+        }
+        @include to(1024px) {
+          height: 175px;
+          font-size: 16px;
+        }
+        @include to(768px) {
+          height: 150px;
+        }
+        @include to(576px) {
+          height: 125px;
+        }
+      }
+    }
+    &-footer {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin-top: 40px;
+      @include to(1024px) {
+        margin-top: 30px;
+        width: 100%;
+      }
+      @include to(768px) {
+        margin-top: 20px;
+      }
+      @include to(768px) {
+        flex-flow: column nowrap;
+        align-items: initial;
+      }
+    }
+    &-btn {
+      margin-right: 25px;
+      background-color: #6f5cea;
+      border-radius: 5px;
+      padding: 18px;
+      width: 100%;
+      max-width: 215px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+      transition: background 0.3s;
+      @include to(1024px) {
+        margin-right: 15px;
+        padding: 15px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @include to(768px) {
+        max-width: 300px;
+        order: 2;
+        margin: 15px auto 0 auto;
+      }
+      &:hover {
+        background-color: #bfc5f9;
+        transition: background 0.3s;
+      }
+    }
+    &-policy {
+      width: 100%;
+      max-width: 350px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #b8b7b7;
+      @include to(1024px) {
+        font-size: 14px;
+      }
+      @include to(768px) {
+        text-align: center;
+        margin: 0 auto;
+      }
+      a {
+        text-decoration-line: underline;
+        color: #303239;
+        transition: color 0.3s;
+        &:hover {
+          color: #6f5cea;
+          transition: color 0.3s;
+        }
+      }
+    }
+  }
+}

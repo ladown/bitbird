@@ -1,0 +1,20 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "catalog-page";
+
+block content
+  +links(["Главная", "Каталог", "Видеокарты"])
+  section.catalog
+    .catalog__wrap
+      .catalog__header 
+        h1.catalog__title Видеокарты
+        .catalog__count 156 товаров
+      .catalog__content 
+        include parts/catalog/catalog-aside.pug
+        .catalog__wrapper
+          include parts/catalog/catalog-categories.pug
+          include parts/catalog/catalog-sort.pug
+          include parts/catalog/catalog-carts.pug
+          include parts/catalog/catalog-pagination.pug
+          include parts/catalog/catalog-seo.pug

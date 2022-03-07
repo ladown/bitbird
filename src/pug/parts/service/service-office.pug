@@ -1,0 +1,56 @@
+include ../../inc/settings.pug
+
+section.service-office
+  .service-office__wrap 
+    h2.service-office__title Наши офисы
+    .service-office__content 
+      .service-office__items 
+        .service-office__item.service-office__item--opened
+          button.service-office__item-btn(data-service-office="btn")
+            img.service-office__item-btn-icon(src=`${imgPath}icons/location-icon.svg` alt="location-icon" loading="lazy")
+            span.service-office__item-btn-caption Воронеж
+            img.service-office__item-btn-arr(src=`${imgPath}service/service-office/arr-icon.svg` alt="arrow-icon" loading="lazy")
+          .service-office__item-subblock 
+            address.service-office__item-addr г. Москва, ул. Кулибина 17, помещ. 605
+            a.service-office__item-link(href="tel:+79102450274") 
+              img(src=`${imgPath}icons/phone-icon-main.svg` alt="phone-icon" loading="lazy")
+              span +7 (910) 245-02-74
+            .service-office__item-time 
+              img.service-office__item-time-icon(src=`${imgPath}icons/time-icon.svg` alt="time-icon" loading="lazy")
+              .service-office__item-time-text
+                | Пн-Пт:&nbsp;&nbsp;с 8:00 до 20:00
+                br
+                | Сб-Вс:&nbsp;&nbsp;с 9:00 до 18:00
+        .service-office__item
+          button.service-office__item-btn(data-service-office="btn")
+            img.service-office__item-btn-icon(src=`${imgPath}icons/location-icon.svg` alt="location-icon" loading="lazy")
+            span.service-office__item-btn-caption Москва
+            img.service-office__item-btn-arr(src=`${imgPath}service/service-office/arr-icon.svg` alt="arrow-icon" loading="lazy")
+          .service-office__item-subblock 
+            address.service-office__item-addr г. Москва, ул. Кулибина 17, помещ. 605
+            a.service-office__item-link(href="tel:+79102450274") 
+              img(src=`${imgPath}icons/phone-icon-main.svg` alt="phone-icon" loading="lazy")
+              span +7 (910) 245-02-74
+            .service-office__item-time 
+              img.service-office__item-time-icon(src=`${imgPath}icons/time-icon.svg` alt="time-icon" loading="lazy")
+              .service-office__item-time-text
+                | Пн-Пт:&nbsp;&nbsp;с 8:00 до 20:00
+                br
+                | Сб-Вс:&nbsp;&nbsp;с 9:00 до 18:00
+      .service-office__iframes
+        iframe.service-office__iframe.service-office__iframe--showed(
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.4404842579465!2d39.238863115844886!3d51.63345777965601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413b2e2212d25509%3A0x427431f159429bee!2z0YPQuy4g0JrRg9C70LjQsdC40L3QsCwgMTcsINCS0L7RgNC-0L3QtdC2LCDQktC-0YDQvtC90LXQttGB0LrQsNGPINC-0LHQuy4sIDM5NDAyOQ!5e0!3m2!1sru!2sru!4v1646554224674!5m2!1sru!2sru"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          data-service-office="iframe")
+        iframe.service-office__iframe(
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.4404842579465!2d39.238863115844886!3d51.63345777965601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413b2e2212d25509%3A0x427431f159429bee!2z0YPQuy4g0JrRg9C70LjQsdC40L3QsCwgMTcsINCS0L7RgNC-0L3QtdC2LCDQktC-0YDQvtC90LXQttGB0LrQsNGPINC-0LHQuy4sIDM5NDAyOQ!5e0!3m2!1sru!2sru!4v1646554224674!5m2!1sru!2sru"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          data-service-office="iframe")

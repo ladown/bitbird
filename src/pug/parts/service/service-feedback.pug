@@ -1,0 +1,49 @@
+include ../../inc/settings.pug
+
+section.service-feedback
+  .service-feedback__wrap 
+    .service-feedback__header 
+      h2.service-feedback__title Отзывы
+      .service-feedback__controls
+        button.service-feedback__btn.service-feedback__btn-prev
+          svg(width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.6777 20.1589C13.2942 20.6383 12.5945 20.7161 12.1151 20.3325L0.997456 11.4384C0.733729 11.2274 0.580206 10.908 0.580206 10.5703C0.580206 10.2325 0.73373 9.91311 0.997456 9.70213L12.1151 0.808041C12.5945 0.424471 13.2942 0.502207 13.6777 0.981669C14.0613 1.46113 13.9836 2.16075 13.5041 2.54432L3.47165 10.5703L13.5041 18.5962C13.9836 18.9798 14.0613 19.6794 13.6777 20.1589Z"
+              fill="#6F5CEA")
+        nav.service-feedback__pagination(data-service-feedback="pagination")
+        button.service-feedback__btn.service-feedback__btn-next
+          svg(width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.908213 1.16729C1.29178 0.68783 1.99141 0.610094 2.47087 0.993663L13.5885 9.88776C13.8522 10.0987 14.0057 10.4182 14.0057 10.7559C14.0057 11.0936 13.8522 11.4131 13.5885 11.624L2.47086 20.5181C1.9914 20.9017 1.29178 20.824 0.90821 20.3445C0.524642 19.865 0.602378 19.1654 1.08184 18.7819L11.1143 10.7559L1.08184 2.72994C0.602381 2.34637 0.524645 1.64675 0.908213 1.16729Z"
+              fill="#6F5CEA")
+    .service-feedback__content
+      .service-feedback__slider.swiper(data-service-feedback="slider")
+        .swiper-wrapper 
+          .service-feedback__slide.swiper-slide
+            .service-feedback__slide-header 
+              img.service-feedback__slide-icon(src=`${imgPath}service/service-feedback/feedback-1.png` alt="feedback-icon" loading="lazy")
+              .service-feedback__slide-name Иванов Александр Петрович
+              .service-feedback__slide-date 22.12.2021
+            p.service-feedback__slide-text Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой.
+          .service-feedback__slide.swiper-slide
+            .service-feedback__slide-header 
+              img.service-feedback__slide-icon(src=`${imgPath}service/service-feedback/feedback-2.png` alt="feedback-icon" loading="lazy")
+              .service-feedback__slide-name Кривошапко Валерий Валентинович
+              .service-feedback__slide-date 22.12.2021
+            p.service-feedback__slide-text Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой.
+          .service-feedback__slide.swiper-slide
+            .service-feedback__slide-header 
+              img.service-feedback__slide-icon(src=`${imgPath}service/service-feedback/feedback-3.png` alt="feedback-icon" loading="lazy")
+              .service-feedback__slide-name Мартыненко Александр Викторович
+              .service-feedback__slide-date 22.12.2021
+            p.service-feedback__slide-text Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой. Значимость этих проблем настолько очевидна.
+          .service-feedback__slide.swiper-slide
+            .service-feedback__slide-header 
+              img.service-feedback__slide-icon(src=`${imgPath}service/service-feedback/feedback-2.png` alt="feedback-icon" loading="lazy")
+              .service-feedback__slide-name Кривошапко Валерий Валентинович
+              .service-feedback__slide-date 22.12.2021
+            p.service-feedback__slide-text Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой.

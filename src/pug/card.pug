@@ -1,0 +1,13 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "card-page";
+
+block content
+  +links(["Главная", "Каталог", "Видеокарта", "NVIDIA GFORCE GTX 2060"])
+  include parts/card/card-promo.pug
+  include parts/card/card-descr.pug
+  include inc/consultation.pug
+  include parts/card/card-sliders.pug
+  +banners
+  include parts/card/card-modal.pug

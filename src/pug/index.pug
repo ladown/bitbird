@@ -1,0 +1,12 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "main-page";
+
+block content
+  include parts/main-page/promo.pug
+  include inc/advantages.pug
+  +makers('От лучших производителей')
+  include parts/main-page/sliders.pug
+  +banners("Услуги", true)
+  include inc/consultation.pug

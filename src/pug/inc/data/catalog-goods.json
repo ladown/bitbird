@@ -1,0 +1,22 @@
+[
+  {
+    "caption": "Готовые тушки",
+    "count": "234 товара",
+    "img": "./img/catalog-outer/catalog-goods/catalog-goods-1.png"
+  },
+  {
+    "caption": "Видеокарты",
+    "count": "564 товара",
+    "img": "./img/catalog-outer/catalog-goods/catalog-goods-2.png"
+  },
+  {
+    "caption": "Майнинг фермы",
+    "count": "23 товара",
+    "img": "./img/catalog-outer/catalog-goods/catalog-goods-3.png"
+  },
+  {
+    "caption": "Комплектующие",
+    "count": "1 234 товара",
+    "img": "./img/catalog-outer/catalog-goods/catalog-goods-4.png"
+  }
+]

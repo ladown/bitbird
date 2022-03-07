@@ -1,0 +1,24 @@
+section.sliders 
+  .sliders__wrap 
+    .sliders__header
+      .sliders__tabs(data-sliders-tab="parent")
+        button.sliders__tab(data-sliders-tab="btn") Хиты
+        button.sliders__tab(data-sliders-tab="btn") Новинки
+        button.sliders__tab(data-sliders-tab="btn") SALE
+      .sliders__btns-wrap
+    .sliders__content 
+      .sliders__slider.swiper(data-sliders="slider" data-sliders-tab="content")
+        .swiper-wrapper
+          each good, idx in goods
+            if idx <= 6
+              +cart(good, idx, true)
+      .sliders__slider.swiper(data-sliders="slider" data-sliders-tab="content")
+        .swiper-wrapper
+          each good, idx in goods
+            if idx <= 8
+              +cart(good, idx, true)
+      .sliders__slider.swiper(data-sliders="slider" data-sliders-tab="content")
+        .swiper-wrapper
+          each good, idx in goods
+            if idx <= 4
+              +cart(good, idx, true)

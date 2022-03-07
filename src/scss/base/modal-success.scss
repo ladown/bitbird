@@ -1,0 +1,88 @@
+.modal-success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+  &--opened {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  @include to(576px) {
+    padding: 15px;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #303239;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+    .modal-success--opened & {
+      opacity: 0.65;
+      visibility: visible;
+      pointer-events: all;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  }
+  &__wrap {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+    padding: 75px;
+    top: -100%;
+    transform: translateY(-100%);
+    transition: all 0.3s;
+    @include to(1024px) {
+      max-width: 450px;
+    }
+    .modal-success--opened & {
+      top: 0;
+      transform: translateY(0);
+      transition: all 0.3s;
+    }
+    @include to(1024px) {
+      padding: 50px 35px;
+    }
+    @include to(576px) {
+      padding: 35px 20px;
+    }
+  }
+  &__title {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: #6f5cea;
+    @include to(1024px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    @include to(576px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

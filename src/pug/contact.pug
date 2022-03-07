@@ -1,0 +1,9 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "contact-page";
+
+block content
+  +links(['Главная', 'Контакты'])
+  include parts/contact/contact-promo.pug
+  include parts/contact/contact-consultation.pug

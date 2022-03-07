@@ -1,0 +1,197 @@
+.banners {
+  margin-top: 50px;
+  @include to(1300px) {
+    margin-top: 40px;
+  }
+  @include to(768px) {
+    margin-top: 30px;
+  }
+  @include to(576px) {
+    margin-top: 20px;
+  }
+  &__wrap {
+    @include wrap;
+  }
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__btns {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 5px;
+    @include to(576px) {
+      display: none;
+    }
+  }
+  &__btn {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(158, 158, 158, 0.25);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    transition: background-color 0.3s, opacity 0.3s;
+    &-prev {
+      margin-right: 8px;
+    }
+    path {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      background-color: #6f5cea;
+      transition: background-color 0.3s;
+      path {
+        fill: #fff;
+        transition: fill 0.3s;
+      }
+    }
+    &.swiper-button-disabled {
+      opacity: 0.5;
+      transition: background-color 0.3s, opacity 0.3s;
+      &:hover {
+        background-color: #fff;
+        opacity: 0.5;
+        transition: background-color 0.3s, opacity 0.3s;
+        path {
+          fill: #6f5cea;
+          transition: fill 0.3s;
+        }
+      }
+    }
+  }
+  &__slider {
+    margin-top: 25px;
+    @include to(1024px) {
+      margin-top: 15px;
+    }
+    @include to(576px) {
+      margin-top: 10px;
+    }
+    .swiper-wrapper {
+      @include to(576px) {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @include to(1300px) {
+      gap: 30px;
+    }
+    @include to(768px) {
+      gap: 20px;
+    }
+    @include to(576px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+  &__item {
+    border-radius: 10px;
+    position: relative;
+    .banners__slider & {
+      @include to(576px) {
+        width: 100% !important;
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &-descr {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      @include to(1024px) {
+        padding: 20px;
+      }
+    }
+    &-label {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #d1d1d1;
+    }
+    &-caption {
+      width: 100%;
+      max-width: 300px;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 62px;
+      color: #ffffff;
+      @include to(1200px) {
+        font-size: 42px;
+        line-height: 48px;
+        max-width: 270px;
+      }
+      @include to(1024px) {
+        font-size: 36px;
+        line-height: 42px;
+        max-width: 230px;
+      }
+      @include to(768px) {
+        font-size: 30px;
+        line-height: 36px;
+        max-width: 190px;
+      }
+      @include to(576px) {
+        max-width: unset;
+        font-size: 24px;
+        line-height: 31px;
+      }
+    }
+    &-bg {
+      border-radius: inherit;
+      @include cover;
+      display: block;
+      min-height: 320px;
+      @include to(576px) {
+        max-height: 140px;
+        min-height: unset;
+      }
+      img {
+        display: block;
+        border-radius: inherit;
+        @include cover;
+        min-height: inherit;
+        max-height: inherit;
+      }
+    }
+  }
+}

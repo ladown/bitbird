@@ -1,0 +1,178 @@
+include settings.pug
+
+header.header
+  .header__upper
+    .header__wrap 
+      .header__contact
+        a.header__contact-link(href="#") 
+          img(src=`${imgPath}/icons/mail-icon.svg` alt="mail-icon" loading="lazy")
+          span miner@basa.com
+        a.header__contact-link(href="#") 
+          img(src=`${imgPath}/icons/phone-icon.svg` alt="phone-icon" loading="lazy")
+          span +7 (910) 245-02-74
+        button.header__contact-callback(data-callback-modal="open-btn") Заказать звонок
+      .header__social
+        a(href="#")
+          img(src=`${imgPath}/icons/viber-icon.svg` alt="viber-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/whatsapp-icon.svg` alt="whatsapp-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/telegram-icon.svg` alt="telegram-icon" loading="lazy")
+  .header__block
+    .header__wrap 
+      a.header__logo(href="/") 
+        img(src=`${imgPath}/icons/logo.svg` alt="logo-icon" loading="lazy")
+      nav.header__nav
+        a(href="#") Главная
+        a(href="#") Гарантия\возврат
+        a(href="#") Контакты
+        a(href="#" data-catalog="open-btn") 
+          span Каталог
+          svg(width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M4 6L0.535899 -6.52533e-07L7.4641 -4.68497e-08L4 6Z" fill="#303239")
+        a(href="#") Доставка
+      .header__interaction
+        form.header__search
+          input.header__search-input(type="search" name="header-search" placeholder="Поиск")
+          button.header__search-btn(type="button" data-search="header-btn")
+            img.header__search-icon(src=`${imgPath}/icons/search-icon.svg` alt="search-icon" loading="lazy")
+            img.header__search-icon-active(src=`${imgPath}/icons/search-icon-active.svg` alt="search-icon" loading="lazy")
+        .header__cart
+          a.header__cart-btn(href="#") 
+            img(src=`${imgPath}/icons/cart-icon.svg` alt="cart-icon" loading="lazy")
+          .header__cart-info 
+            .header__cart-price 8 564 000 р
+            .header__cart-count 20 товаров
+  .header-mob
+    .header-mob__main 
+      .header__wrap
+        a.header__logo(href="/") 
+          img(src=`${imgPath}/icons/logo-light.svg` alt="logo-icon" loading="lazy")
+        button.header__menu-btn(data-menu="open-btn")
+          span
+    .header__interaction
+      .header__wrap
+        form.header__search
+          input.header__search-input(type="search" name="header-search" placeholder="Поиск")
+          button.header__search-btn(type="button" data-search="header-btn")
+            img.header__search-icon(src=`${imgPath}/icons/search-icon.svg` alt="search-icon" loading="lazy")
+            img.header__search-icon-active(src=`${imgPath}/icons/search-icon-active.svg` alt="search-icon" loading="lazy")
+        .header__cart
+          a.header__cart-btn(href="#") 
+            svg(width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.4905 7.61648H12.6756C13.007 7.61648 13.2673 7.34256 13.2673 7.01223C13.2673 6.67385 13.007 6.40798 12.6756 6.40798H10.4905C10.1592 6.40798 9.89885 6.67385 9.89885 7.01223C9.89885 7.34256 10.1592 7.61648 10.4905 7.61648ZM15.2708 3.4278C15.752 3.4278 16.0676 3.59699 16.3831 3.9676C16.6987 4.3382 16.7539 4.86994 16.6829 5.35253L15.9335 10.6377C15.7915 11.6536 14.9395 12.4021 13.9377 12.4021H5.3312C4.28202 12.4021 3.41428 11.5811 3.3275 10.5177L2.60175 1.7351L1.41058 1.52563C1.09503 1.46923 0.874152 1.15502 0.929372 0.832754C0.984593 0.503237 1.29225 0.284902 1.61568 0.334047L3.49711 0.623281C3.76532 0.672426 3.96253 0.897207 3.9862 1.17113L4.13608 2.97582C4.15975 3.23444 4.36485 3.4278 4.61729 3.4278H15.2708ZM5.20492 13.6754C4.54228 13.6754 4.00586 14.2233 4.00586 14.9C4.00586 15.5687 4.54228 16.1166 5.20492 16.1166C5.85968 16.1166 6.3961 15.5687 6.3961 14.9C6.3961 14.2233 5.85968 13.6754 5.20492 13.6754ZM14.0795 13.6755C13.4168 13.6755 12.8804 14.2233 12.8804 14.9001C12.8804 15.5688 13.4168 16.1166 14.0795 16.1166C14.7342 16.1166 15.2706 15.5688 15.2706 14.9001C15.2706 14.2233 14.7342 13.6755 14.0795 13.6755Z"
+                fill="white")
+          .header__cart-info 
+            .header__cart-price 8 564 000 р
+            .header__cart-count 20 товаров
+    .header__menu
+      nav.header__nav
+        a(href="#") Главная
+        a(href="#") Гарантия\возврат
+        .header-mob__catalog 
+          a(href="#" data-catalog-mob="open-btn") 
+            span Контакты
+            img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
+          .header-mob__catalog-block
+            .header-mob__catalog-item
+              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+                span Майнинг фермы
+                img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
+              .header-mob__catalog-links
+                a(href="#") Фермы на NVIDIA
+                a(href="#") Фермы на AMD
+            .header-mob__catalog-item
+              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+                span Видеокарты
+                img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
+              .header-mob__catalog-links
+                a(href="#") Видеокарты на NVIDIA
+                a(href="#") Видеокарты на AMD
+            .header-mob__catalog-item
+              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+                span Готовые тушки
+                img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
+              .header-mob__catalog-links
+                a(href="#") Видеокарты на NVIDIA
+                a(href="#") Видеокарты на AMD
+            .header-mob__catalog-item
+              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+                span Комплектующие
+                img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
+              .header-mob__catalog-links
+                a(href="#") Аппаратные кошельки
+                a(href="#") Райзера и переходники
+                a(href="#") Реобасы
+                a(href="#") Умные розетки
+                a(href="#") Ваттметры
+                a(href="#") Ватдоги
+                a(href="#") Блоки питания
+                a(href="#") Охлаждение
+                a(href="#") Материнские платы
+                a(href="#") Жесткие диски для майнинга
+                a(href="#") Оперативная память
+                a(href="#") Процессоры
+                a(href="#") Корпусы
+        a(href="#") Каталог
+        a(href="#") Доставка
+      .header__contact
+        a.header__contact-link(href="#") 
+          img(src=`${imgPath}/icons/mail-icon.svg` alt="mail-icon" loading="lazy")
+          span miner@basa.com
+        a.header__contact-link(href="#") 
+          img(src=`${imgPath}/icons/phone-icon.svg` alt="phone-icon" loading="lazy")
+          span +7 (910) 245-02-74
+      .header__social
+        a(href="#")
+          img(src=`${imgPath}/icons/viber-icon.svg` alt="viber-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/whatsapp-icon.svg` alt="whatsapp-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/telegram-icon.svg` alt="telegram-icon" loading="lazy")
+  .header__catalog(data-catalog="block")
+    .header__catalog-overlay(data-catalog="overlay")
+    .header__catalog-wrap
+      button.header__catalog-close(data-catalog="close-btn")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          rect(x="28.4016" y="0.000244141" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(45 28.4016 0.000244141)" fill="#B8B7B7")
+          rect(x="0.000244141" y="3.55029" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(-45 0.000244141 3.55029)" fill="#B8B7B7")
+      .header__catalog-title Каталог
+      .header__catalog-items
+        .header__catalog-column
+          a.header__catalog-label(href="#") Майнинг фермы
+          .header__catalog-links 
+            a.header__catalog-link(href="#") Фермы на NVIDIA
+            a.header__catalog-link(href="#") Фермы на AMD
+          a.header__catalog-label(href="#") Видеокарты
+          .header__catalog-links 
+            a.header__catalog-link(href="#") Видеокарты NVIDIA
+            a.header__catalog-link(href="#") Видеокарты AMD
+          a.header__catalog-label(href="#") Готовые тушки
+        .header__catalog-column
+          a.header__catalog-label(href="#") Комплектующие
+          .header__catalog-links.header__catalog-links-columns
+            .header__catalog-column
+              a.header__catalog-link(href="#") Аппаратные кошельки
+              a.header__catalog-link(href="#") Райзера и переходники
+              a.header__catalog-link(href="#") Реобасы
+              a.header__catalog-link(href="#") Умные розетки
+              a.header__catalog-link(href="#") Ваттметры
+              a.header__catalog-link(href="#") Ватдоги
+              a.header__catalog-link(href="#") Блоки питания
+              a.header__catalog-link(href="#") Охлаждение
+            .header__catalog-column
+              a.header__catalog-link(href="#") Материнские платы
+              a.header__catalog-link(href="#") Жесткие диски для майнинга
+              ul.header__catalog-list
+                li 
+                  a.header__catalog-link(href="#") HDD для майнинга
+                li 
+                  a.header__catalog-link(href="#") SSD NVME для майнинга
+                li 
+                  a.header__catalog-link(href="#") SSD для майнинга
+              a.header__catalog-link(href="#") Оперативная память
+              a.header__catalog-link(href="#") Процессоры
+              a.header__catalog-link(href="#") Корпусы

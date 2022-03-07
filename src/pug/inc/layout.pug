@@ -1,0 +1,15 @@
+doctype html
+
+include settings.pug
+include mixins.pug
+block vars
+
+html(lang="ru" dir="ltr")
+  include head.pug
+  body(class=`${bodyClass}`)
+    include header.pug
+    main.content
+      block content
+      include callback-modal.pug
+      include modal-success.pug
+    include footer.pug

@@ -1,0 +1,16 @@
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-family: "TTFirsNeue", sans-serif;
+  &.blocked-scroll {
+    overflow: hidden !important;
+  }
+}
+
+.content {
+  overflow: hidden;
+}
+
+.swiper-button-disabled {
+  cursor: not-allowed;
+}

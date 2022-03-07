@@ -1,0 +1,14 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "service-page";
+
+block content
+  +links(['Главная', 'Услуги', 'Ремонт видеокарт'])
+  +service-promo('Ремонт видеокарт', 'Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки соответствующий условий активизации. Значимость этих проблем настолько очевидна, что укрепление и развитие структуры способствует подготовки и реализации модели развития.', '1')
+  +makers
+  include parts/service/service-price.pug
+  include parts/service/service-steps.pug
+  include parts/service/service-office.pug
+  include inc/callback.pug
+  include parts/service/service-seo.pug

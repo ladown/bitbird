@@ -1,0 +1,7 @@
+.service-seo {
+  @include wrap;
+  margin-top: 50px;
+  @include to(1024px) {
+    margin-top: 30px;
+  }
+}

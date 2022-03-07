@@ -1,0 +1,75 @@
+@import "./order-total.scss";
+@import "./order-inputs.scss";
+@import "./order-code.scss";
+
+.order-page {
+  .content {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    @include to(1200px) {
+      padding: 50px 0;
+    }
+    @include to(1024px) {
+      padding: 40px 0;
+    }
+    @include to(768px) {
+      padding: 30px 0;
+    }
+    @include to(576px) {
+      padding: 20px 0;
+    }
+  }
+}
+
+.order {
+  &__wrap {
+    position: relative;
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      margin-top: 5px;
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      margin-top: 10px;
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      margin-top: 15px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    margin-top: 85px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 30px;
+    @include to(1200px) {
+      margin-top: 70px;
+    }
+    @include to(1024px) {
+      margin-top: 45px;
+      grid-template-columns: 1fr 275px;
+    }
+    @include to(768px) {
+      margin-top: 25px;
+    }
+    @include to(600px) {
+      margin-top: 15px;
+      grid-template-columns: 1fr;
+    }
+  }
+}

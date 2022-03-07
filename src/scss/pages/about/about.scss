@@ -1,0 +1,33 @@
+@import "./about-promo.scss";
+@import "./about-services.scss";
+
+.about-page {
+  .content {
+    padding: 60px 0 40px 0;
+    background-color: #f5f5f5;
+    @include to(1024px) {
+      padding: 20px 0 30px 0;
+    }
+  }
+  .advantages {
+    margin-top: 70px;
+    @include to(1024px) {
+      margin-top: 30px;
+    }
+  }
+  .makers {
+    margin-top: 70px;
+    @include to(1024px) {
+      margin-top: 30px;
+    }
+    &__slider-outer {
+      margin-top: 15px;
+      @include to(1024px) {
+        margin-top: 10px;
+      }
+      @include to(576px) {
+        margin-top: 5px;
+      }
+    }
+  }
+}

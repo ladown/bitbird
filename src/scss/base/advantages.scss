@@ -1,0 +1,82 @@
+.advantages {
+  &__wrap {
+    @include wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    @include to(1024px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    @include to(576px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+  &__item {
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    @include to(1024px) {
+      padding: 20px;
+    }
+    &-icon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: auto;
+      margin-right: 25px;
+      @include to(1024px) {
+        flex: 0 0 35px;
+        width: 35px;
+        margin-right: 20px;
+      }
+      @include to(576px) {
+        flex: 0 0 30px;
+        width: 30px;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    &-descr {
+      flex: 0 1 100%;
+    }
+    &-caption {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-text {
+      margin-top: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #303239;
+      @include to(1024px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

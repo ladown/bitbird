@@ -1,0 +1,18 @@
+section.card-sliders
+  .card-sliders__wrap 
+    .card-sliders__header
+      .card-sliders__tabs(data-card-slider="tabs")
+        button.card-sliders__tab(data-card-slider="tab") С этими товарами покупают
+        button.card-sliders__tab(data-card-slider="tab") Вы смотрели
+      .card-sliders__btns-wrap
+    .card-sliders__content 
+      .card-sliders__slider.swiper(data-card-slider="content")
+        .swiper-wrapper
+          each good, idx in goods
+            if idx <= 3
+              +cart(good, idx, true)
+      .card-sliders__slider.swiper(data-card-slider="content")
+        .swiper-wrapper
+          each good, idx in goods
+            if idx <= 2
+              +cart(good, idx, true)

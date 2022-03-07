@@ -1,0 +1,6 @@
+.catalog-seo {
+  margin-top: 60px;
+  @include to(1024px) {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,40 @@
+.service-label {
+  margin-top: 30px;
+  padding: 85px 0 93px 0;
+  background: url($imgPath + "backgrounds/service-label/label-bg.svg") center center / contain no-repeat;
+  @include to(1024px) {
+    margin-top: 10px;
+    padding: 50px 0;
+    background: url($imgPath + "backgrounds/service-label/label-bg.svg") center center / cover no-repeat;
+  }
+  @include to(430px) {
+    padding: 35px 0;
+    background: url($imgPath + "backgrounds/service-label/label-bg-mob.svg") center center / cover no-repeat;
+  }
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #6f5cea;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+}

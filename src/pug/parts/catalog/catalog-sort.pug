@@ -1,0 +1,9 @@
+.catalog-sort
+  form.woocommerce-ordering(method="get")
+    select.orderby(name="orderby" aria-label="Заказ в магазине")
+      option(value="popularity") По популярности
+      option(value="rating") По рейтингу
+      option(value="date" selected="selected") Сортировка от последнего
+      option(value="price") Цены: по возрастанию
+      option(value="price-desc") Цены: по убыванию
+    input(type="hidden" name="paged" value="1")

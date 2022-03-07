@@ -1,0 +1,21 @@
+.catalog-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(276px, 280px));
+  gap: 40px;
+  margin-bottom: 35px;
+  @include to(1300px) {
+    gap: 30px;
+  }
+  @include to(1200px) {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include to(1024px) {
+    margin-bottom: 30px;
+    margin-top: 25px;
+    gap: 15px;
+  }
+  @include to(576px) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,196 @@
+.footer {
+  background-color: #303239;
+  padding: 40px 0 20px 0;
+  @include to(1024px) {
+    padding: 30px 0 15px 0;
+  }
+  &__block {
+    @include wrap;
+    display: flex;
+    flex-flow: row nowrap;
+    @include to(768px) {
+      flex-flow: column nowrap;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 0 0 700px;
+    margin-right: 100px;
+    @include to(1200px) {
+      flex: 0 0 600px;
+      margin-right: 50px;
+    }
+    @include to(1024px) {
+      margin-right: 25px;
+      flex: 0 0 60%;
+    }
+    @include to(768px) {
+      flex: auto;
+      order: 2;
+      margin-right: 0;
+    }
+    @include to(576px) {
+      flex-flow: column nowrap;
+      align-items: initial;
+      justify-content: initial;
+    }
+    &-links {
+      display: flex;
+      flex-flow: column nowrap;
+      a {
+        width: fit-content;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        color: #ffffff;
+        transition: color 0.3s;
+        @include to(1024px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
+        &:hover {
+          color: #6f5cea;
+          transition: color 0.3s;
+        }
+        &:not(:last-child) {
+          margin-bottom: 15px;
+          @include to(1024px) {
+            margin-bottom: 10px;
+          }
+          @include to(576px) {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+    .footer__column {
+      flex: 0 0 auto;
+      margin-right: 30px;
+      @include to(1024px) {
+        margin-right: 15px;
+      }
+      @include to(576px) {
+        margin-right: 0;
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__column {
+    display: flex;
+    flex-flow: column nowrap;
+    &-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #bfc5f9;
+      margin-bottom: 20px;
+      @include to(1024px) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+      @include to(576px) {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+  &__info {
+    flex: 0 1 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    @include to(768px) {
+      flex: auto;
+      order: 1;
+      margin-bottom: 40px;
+    }
+  }
+  &__link {
+    width: fit-content;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 10px;
+    }
+    img {
+      flex: 0 0 18px;
+      width: 18px;
+      height: auto;
+      margin-right: 15px;
+      @include to(576px) {
+        flex: 0 0 14px;
+        width: 14px;
+        margin-right: 7px;
+      }
+    }
+    &:hover {
+      color: #bfc5f9;
+      transition: color 0.3s;
+    }
+  }
+  &__descr {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  &__social {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 20px;
+    a {
+      display: block;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+      img {
+        display: block;
+      }
+    }
+  }
+  &__divider {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    height: 1px;
+    padding: 0 20px;
+    margin: 20px auto;
+    background-color: #838383;
+  }
+  &__copyright {
+    @include wrap;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include to(576px) {
+      text-align: right;
+      max-width: 200px;
+      margin: 0 0 0 auto;
+    }
+  }
+}

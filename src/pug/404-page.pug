@@ -1,0 +1,11 @@
+doctype html
+
+include inc/settings.pug
+
+html(lang="ru" dir="ltr")
+  include inc/head.pug
+  body.error-page
+    section.error
+      img.error__icon(src=`${imgPath}error-page/error-icon.svg` alt="error-icon" loading="lazy")
+      h1.error__title Что-то пошло не так
+      a.error__link(href="/") Вернуться на главную

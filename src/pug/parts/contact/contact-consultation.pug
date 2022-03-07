@@ -1,0 +1,14 @@
+section.contact-consultation
+  .contact-consultation__wrap
+    h2.contact-consultation__title Нужна консультация?
+    p.contact-consultation__subtitle Заполните форму и наш менеджер обязательно с вами свяжется в ближайшее время
+    form.contact-consultation__form(action="#")
+      .contact-consultation__fields
+        input(type="text" name="name" placeholder="Имя")
+        input(type="email" name="email" inputmode="email" placeholder="Электронная почта")
+        input(type="tel" name="tel" inputmode="tel" placeholder="Номер телефона") 
+      .contact-consultation__footer 
+        button.contact-consultation__btn Отправить
+        p.contact-consultation__policy 
+          | Нажимая кнопку “отправить”, вы соглашаетесь на обработку&nbsp;
+          a(href="#") персональных данных

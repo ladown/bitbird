@@ -1,0 +1,121 @@
+.service-steps {
+  margin-top: 40px;
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0 20px;
+    @include to(1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 0;
+    }
+    @include to(768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include to(576px) {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+      gap: 20px;
+    }
+  }
+  &__item {
+    background: #ffffff;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    @include to(1200px) {
+      min-height: 150px;
+      margin-top: 80px;
+    }
+    @include to(576px) {
+      margin-top: 0;
+      margin-left: 70px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -35px;
+      right: -5px;
+      width: 100%;
+      max-width: calc(100% - 35px);
+      height: 1px;
+      border-top: 1px dashed #303239;
+      @include to(576px) {
+        transform: rotate(90deg);
+        max-width: 100px;
+        top: 90px;
+        left: -105px;
+        right: auto;
+      }
+    }
+    &-counter {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #6f5cea;
+      border-radius: 100%;
+      position: absolute;
+      top: -50px;
+      left: 0;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+      @include to(576px) {
+        top: 0;
+        left: -70px;
+      }
+    }
+    &-caption {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #6f5cea;
+    }
+    &-text {
+      width: 100%;
+      max-width: 120px;
+      margin-top: 15px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #303239;
+      @include to(1200px) {
+        max-width: unset;
+      }
+    }
+  }
+}

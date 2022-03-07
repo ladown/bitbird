@@ -1,0 +1,49 @@
+include settings.pug
+
+footer.footer 
+  .footer__block 
+    nav.footer__nav
+      .footer__column
+        .footer__column-title Информация
+        .footer__nav-links 
+          a(href="#") Контакты
+          a(href="#") О компании
+          a(href="#") Доставка и оплата
+          a(href="#") Политика
+      .footer__column
+        .footer__column-title Служба поддержки
+        .footer__nav-links 
+          a(href="#") Гарантия и возврат
+          a(href="#") Обратная связь
+          a(href="#") Карта сайта
+      .footer__column
+        .footer__column-title Покупателям
+        .footer__nav-links 
+          a(href="#") Каталог
+          a(href="#") Услуги
+          a(href="#") Майнинг под ключ
+          a(href="#") Сборка ферм
+    .footer__info
+      .footer__column-title Контактная информация
+      a.footer__link(href="#") 
+        img(src=`${imgPath}/icons/mail-icon.svg` alt="mail-icon")
+        span miner@basa.com
+      a.footer__link(href="#") 
+        img(src=`${imgPath}/icons/phone-icon.svg` alt="phone-icon")
+        span +7 (910) 245-02-74
+      p.footer__descr
+        | ООО "Айти Технологии" <br>
+        | Юридический адрес: <br>
+        | 394029, г. Воронеж, ул. Кулибина 17, помещ. 605 <br>
+        <br>
+        | ИНН: 3663153430 <br>
+        | ОГРН: 1213600001966
+      .footer__social
+        a(href="#")
+          img(src=`${imgPath}/icons/viber-icon.svg` alt="viber-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/whatsapp-icon.svg` alt="whatsapp-icon" loading="lazy")
+        a(href="#")
+          img(src=`${imgPath}/icons/telegram-icon.svg` alt="telegram-icon" loading="lazy")
+  .footer__divider
+  p.footer__copyright 2022, ООО «BitBird». Все права защищены

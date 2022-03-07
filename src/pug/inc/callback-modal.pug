@@ -1,0 +1,17 @@
+section.callback-modal(data-callback-modal="block")
+  .callback-modal__overlay(data-callback-modal="overlay")
+  .callback-modal__wrap 
+    button.callback-modal__close(data-callback-modal="close-btn")
+      svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+        rect(x="28.4014" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(45 28.4014 0)" fill="#B8B7B7")
+        rect(y="3.5498" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(-45 0 3.5498)" fill="#B8B7B7")
+    h2.callback-modal__title Заказать обратный звонок
+    form.callback-modal__form(action="#") 
+      .callback-modal__inputs 
+        input.callback-modal__input(type="text" name="name" placeholder="Имя")
+        input.callback-modal__input(type="tel" inputmode="tel" name="phone" placeholder="Номер телефона")
+      .callback-modal__footer 
+        button.callback-modal__btn Отправить
+        p.callback-modal__policy 
+          | Нажимая кнопку “отправить”, вы соглашаетесь на обработку&nbsp;
+          a(href="#") персональных данных

@@ -1,0 +1,163 @@
+.service-price {
+  margin-top: 30px;
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include to(1024px) {
+      gap: 15px;
+    }
+    @include to(576px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+  &__item {
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    background: #ffffff;
+    border-radius: 10px;
+    @include to(1024px) {
+      padding: 20px;
+    }
+    &-caption {
+      width: 100%;
+      max-width: 325px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      color: #303239;
+      @include to(1024px) {
+        max-width: 300px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      @include to(576px) {
+        max-width: 250px;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    &-labels {
+      margin-top: 30px;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      @include to(1024px) {
+        margin-top: 20px;
+      }
+    }
+    &-label {
+      margin: 10px 40px 0 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      @include to(1024px) {
+        margin: 5px 25px 0 0;
+      }
+      &-icon {
+        height: auto;
+        width: 100%;
+        flex: 0 0 28px;
+        max-width: 28px;
+        margin-right: 15px;
+        @include to(1200px) {
+          flex: 0 0 25px;
+          max-width: 25px;
+        }
+        @include to(1024px) {
+          margin-right: 10px;
+          flex: 0 0 22px;
+          max-width: 22px;
+        }
+        @include to(768px) {
+          flex: 0 0 18px;
+          max-width: 18px;
+        }
+      }
+      &-text {
+        flex: 0 0 auto;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #303239;
+        @include to(1200px) {
+          font-size: 16px;
+          line-height: 19px;
+        }
+        @include to(1024px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
+        @include to(576px) {
+          font-size: 12px;
+          line-height: 14px;
+        }
+        strong,
+        b {
+          font-weight: 600;
+        }
+      }
+    }
+    &-btn {
+      margin-top: 40px;
+      border: 1.5px solid #bfc5f9;
+      background: transparent;
+      border-radius: 3px;
+      width: 100%;
+      max-width: 170px;
+      padding: 11px;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #303239;
+      transition: color 0.3s, background 0.3s, border 0.3s;
+      @include to(1024px) {
+        margin-top: 25px;
+        max-width: 150px;
+        padding: 7px;
+        font-size: 14px;
+      }
+      @include to(576px) {
+        max-width: 120px;
+      }
+      &:hover {
+        border-color: #6f5cea;
+        background-color: #6f5cea;
+        color: #fff;
+        transition: color 0.3s, background 0.3s, border 0.3s;
+      }
+    }
+  }
+}

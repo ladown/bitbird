@@ -1,0 +1,42 @@
+.catalog-sort {
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 5px 20px;
+  form {
+    &:not(:last-child) {
+      padding-right: 20px;
+      border-right: 1.5px solid #e4e4e4;
+      @include to(1024px) {
+        padding-right: 15px;
+      }
+    }
+    &:not(:first-child) {
+      padding-left: 20px;
+      @include to(1024px) {
+        padding-right: 15px;
+      }
+    }
+  }
+  select {
+    appearance: none;
+    padding-right: 20px;
+    margin-top: 5px;
+    position: relative;
+    border: none;
+    outline: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #303239;
+    background-image: url($imgPath + "/catalog/catalog-sort/arr.svg");
+    background-repeat: no-repeat;
+    background-size: 7px 5px;
+    background-position: 97% 50%;
+    @include to(1024px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

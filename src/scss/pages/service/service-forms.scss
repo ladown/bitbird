@@ -1,0 +1,173 @@
+.service-forms {
+  margin-top: 70px;
+  @include to(1024px) {
+    margin-top: 30px;
+  }
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 20px;
+    @include to(768px) {
+      flex-flow: column nowrap;
+    }
+  }
+  &__item {
+    background-color: #fff;
+    border-radius: 10px;
+    flex: 0 1 100%;
+    padding: 25px 35px;
+    @include to(1024px) {
+      padding: 25px;
+    }
+    @include to(768px) {
+      flex: auto;
+      width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 40px;
+      @include to(1024px) {
+        margin-right: 20px;
+      }
+      @include to(768px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &-header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-price {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #303239;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-list {
+      width: 100%;
+      max-width: 480px;
+      margin-top: 40px;
+      list-style-type: none;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #303239;
+      @include to(1024px) {
+        font-size: 14px;
+      }
+      @include to(768px) {
+        max-width: unset;
+      }
+      li {
+        position: relative;
+        padding-left: 28px;
+        @include to(1024px) {
+          padding-left: 20px;
+        }
+        &::before {
+          content: "";
+          width: 11px;
+          height: 11px;
+          position: absolute;
+          top: 4px;
+          left: 0;
+          background-color: #6f5cea;
+          border-radius: 100%;
+          @include to(1024px) {
+            top: 3px;
+          }
+        }
+        &:not(:last-child) {
+          margin-bottom: 25px;
+          @include to(1024px) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+    &-btn {
+      width: 100%;
+      max-width: 220px;
+      background-color: #6f5cea;
+      border-radius: 3px;
+      margin-top: 40px;
+      padding: 11px;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #ffffff;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: #bfc5f9;
+        transition: background-color 0.3s;
+      }
+    }
+  }
+}

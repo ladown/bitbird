@@ -1,0 +1,12 @@
+@import "./contact-promo.scss";
+@import "./contact-consultation.scss";
+
+.contact-page {
+  .content {
+    background-color: #f5f5f5;
+    padding: 60px 0 20px 0;
+    @include to(1024px) {
+      padding: 15px 0 30px 0;
+    }
+  }
+}

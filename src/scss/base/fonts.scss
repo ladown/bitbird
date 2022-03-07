@@ -1,0 +1,12 @@
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Thin", 100, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Light", 300, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Regular", 400, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Medium", 500, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-DemiBold", 600, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Bold", 700, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-ExtraBold", 800, normal, eot woff woff2 ttf);
+@include font-face("TTFirsNeue", $fontsPath + "TTFirsNeue-Black", 900, normal, eot woff woff2 ttf);
+@include font-face("Montserrat Alternates", $fontsPath + "MontserratAlternates-SemiBold", 600, normal, woff woff2 ttf);
+@include font-face("Roboto", $fontsPath + "Roboto-Regular", 400, normal, woff woff2 ttf);
+@include font-face("Roboto", $fontsPath + "Roboto-Medium", 500, normal, woff woff2 ttf);
+@include font-face("Roboto", $fontsPath + "Roboto-Bold", 600, normal, woff woff2 ttf);

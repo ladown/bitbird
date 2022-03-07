@@ -1,0 +1,232 @@
+mixin links(links)
+  nav.links
+    .links__wrap
+      each link, idx in links
+        if idx !== links.length - 1
+          a(href="#") #{ link }
+          span.links__divider /
+        else
+          a(href="#") #{ link }
+
+mixin category(good)
+  .category
+    .category__descr
+      a.category__caption(href="#") #{ good.caption }
+      .category__count #{ good.count }
+    img.category__img(src=`${good.img}` alt=`${good.caption}` loading="lazy")
+
+mixin cart(good, i, slider)
+  if slider
+    .cart.swiper-slide
+      if good.isLabel
+        .cart__labels
+          if good.isHit
+            .cart__label.cart__label_green hit
+          if good.isSale
+            .cart__label.cart__label_red #{ good.salePercent }
+      a.cart__img(href="#") 
+        img(src=`${imgPath}goods/good-${i + 1}.png` alt=`${good.caption}` loading="lazy")
+      .cart__descr
+        a.cart__caption(href="#")  #{ good.caption }
+        if good.prevPrice
+          .cart__price
+            .cart__price-old #{ good.prevPrice }
+            .cart__price-new #{ good.price }
+        else
+          .cart__price
+            .cart__price-new #{ good.price }
+        if good.isLinked
+          a.cart__btn.cart__link(href="#") 
+            svg(width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM31.2071 8.70711C31.5976 8.31658 31.5976 7.68342 31.2071 7.29289L24.8431 0.928932C24.4526 0.538408 23.8195 0.538408 23.4289 0.928932C23.0384 1.31946 23.0384 1.95262 23.4289 2.34315L29.0858 8L23.4289 13.6569C23.0384 14.0474 23.0384 14.6805 23.4289 15.0711C23.8195 15.4616 24.4526 15.4616 24.8431 15.0711L31.2071 8.70711ZM1 9H30.5V7H1V9Z"
+                fill="#BFC5F9")
+        else
+          button.cart__btn 
+            svg(width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.9186 11.8306H18.3184C18.8339 11.8306 19.2389 11.4037 19.2389 10.8888C19.2389 10.3614 18.8339 9.94705 18.3184 9.94705H14.9186C14.4031 9.94705 13.9981 10.3614 13.9981 10.8888C13.9981 11.4037 14.4031 11.8306 14.9186 11.8306ZM22.3561 5.30204C23.1048 5.30204 23.5958 5.56574 24.0867 6.14338C24.5777 6.72102 24.6636 7.54981 24.5531 8.302L23.3871 16.5397C23.1662 18.1232 21.8406 19.2897 20.2818 19.2897H6.89122C5.25881 19.2897 3.9087 18.0101 3.77369 16.3526L2.64451 2.66372L0.791179 2.33723C0.30023 2.24933 -0.0434346 1.75959 0.0424815 1.25729C0.128398 0.743696 0.607073 0.403391 1.1103 0.479991L4.03758 0.930802C4.45488 1.0074 4.76173 1.35775 4.79855 1.78471L5.03175 4.59757C5.06857 5.00066 5.38769 5.30204 5.78045 5.30204H22.3561ZM6.69474 21.2744C5.66374 21.2744 4.82912 22.1283 4.82912 23.1831C4.82912 24.2254 5.66374 25.0793 6.69474 25.0793C7.71346 25.0793 8.54808 24.2254 8.54808 23.1831C8.54808 22.1283 7.71346 21.2744 6.69474 21.2744ZM20.5023 21.2745C19.4713 21.2745 18.6366 22.1284 18.6366 23.1832C18.6366 24.2255 19.4713 25.0794 20.5023 25.0794C21.521 25.0794 22.3556 24.2255 22.3556 23.1832C22.3556 22.1284 21.521 21.2745 20.5023 21.2745Z"
+                fill="#BFC5F9")
+  else
+    .cart
+      if good.isLabel
+        .cart__labels
+          if good.isHit
+            .cart__label.cart__label_green hit
+          if good.isSale
+            .cart__label.cart__label_red #{ good.salePercent }
+      a.cart__img(href="#") 
+        img(src=`${imgPath}goods/good-${i + 1}.png` alt=`${good.caption}` loading="lazy")
+      .cart__descr
+        a.cart__caption(href="#")  #{ good.caption }
+        if good.prevPrice
+          .cart__price
+            .cart__price-old #{ good.prevPrice }
+            .cart__price-new #{ good.price }
+        else
+          .cart__price
+            .cart__price-new #{ good.price }
+        if good.isLinked
+          a.cart__btn.cart__link(href="#") 
+            svg(width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM31.2071 8.70711C31.5976 8.31658 31.5976 7.68342 31.2071 7.29289L24.8431 0.928932C24.4526 0.538408 23.8195 0.538408 23.4289 0.928932C23.0384 1.31946 23.0384 1.95262 23.4289 2.34315L29.0858 8L23.4289 13.6569C23.0384 14.0474 23.0384 14.6805 23.4289 15.0711C23.8195 15.4616 24.4526 15.4616 24.8431 15.0711L31.2071 8.70711ZM1 9H30.5V7H1V9Z"
+                fill="#BFC5F9")
+        else
+          button.cart__btn 
+            svg(width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.9186 11.8306H18.3184C18.8339 11.8306 19.2389 11.4037 19.2389 10.8888C19.2389 10.3614 18.8339 9.94705 18.3184 9.94705H14.9186C14.4031 9.94705 13.9981 10.3614 13.9981 10.8888C13.9981 11.4037 14.4031 11.8306 14.9186 11.8306ZM22.3561 5.30204C23.1048 5.30204 23.5958 5.56574 24.0867 6.14338C24.5777 6.72102 24.6636 7.54981 24.5531 8.302L23.3871 16.5397C23.1662 18.1232 21.8406 19.2897 20.2818 19.2897H6.89122C5.25881 19.2897 3.9087 18.0101 3.77369 16.3526L2.64451 2.66372L0.791179 2.33723C0.30023 2.24933 -0.0434346 1.75959 0.0424815 1.25729C0.128398 0.743696 0.607073 0.403391 1.1103 0.479991L4.03758 0.930802C4.45488 1.0074 4.76173 1.35775 4.79855 1.78471L5.03175 4.59757C5.06857 5.00066 5.38769 5.30204 5.78045 5.30204H22.3561ZM6.69474 21.2744C5.66374 21.2744 4.82912 22.1283 4.82912 23.1831C4.82912 24.2254 5.66374 25.0793 6.69474 25.0793C7.71346 25.0793 8.54808 24.2254 8.54808 23.1831C8.54808 22.1283 7.71346 21.2744 6.69474 21.2744ZM20.5023 21.2745C19.4713 21.2745 18.6366 22.1284 18.6366 23.1832C18.6366 24.2255 19.4713 25.0794 20.5023 25.0794C21.521 25.0794 22.3556 24.2255 22.3556 23.1832C22.3556 22.1284 21.521 21.2745 20.5023 21.2745Z"
+                fill="#BFC5F9")
+
+mixin basket(good)
+  .basket__item
+    a.basket__item-img(href="#") 
+      img(src=`${good.img}` alt=`${good.caption}`) 
+    .basket__item-descr
+      a.basket__item-caption(href="#")  #{ good.caption }
+      .basket__item-counter 
+        button.basket__item-counter-btn
+          svg(width="26" height="4" viewBox="0 0 26 4" fill="none" xmlns="http://www.w3.org/2000/svg")
+            rect(x="0.675659" y="3.35156" width="3.13513" height="25.0811" rx="1.56757" transform="rotate(-90 0.675659 3.35156)" fill="#6F5CEA")
+        input.basket__item-counter-input(type="number" value="0")
+        button.basket__item-counter-btn
+          svg(width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+            rect(x="11.2163" y="0.675781" width="3.13513" height="25.0811" rx="1.56757" fill="#6F5CEA")
+            rect(x="0.243286" y="14.7837" width="3.13513" height="25.0811" rx="1.56757" transform="rotate(-90 0.243286 14.7837)" fill="#6F5CEA")
+      if good.count
+        .basket__item-count #{ good.count }
+      .basket__item-price #{ good.price }
+      button.basket__item-remove 
+        svg(width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+          rect(x="17.7349" width="3.13513" height="25.0811" rx="1.56757" transform="rotate(45 17.7349 0)" fill="#303239")
+          rect(y="2.45654" width="3.13513" height="25.0811" rx="1.56757" transform="rotate(-45 0 2.45654)" fill="#303239")
+
+mixin makers(title)
+  .makers
+    .makers__wrap
+      if title
+        h2.makers__title #{ title }
+      .makers__slider-outer
+        .makers__slider.swiper(data-makers="slider")
+          .swiper-wrapper
+            .makers__slide.swiper-slide
+              img(src=`${imgPath}makers/maker-1.png` alt="maker-image")
+            .makers__slide.swiper-slide
+              img(src=`${imgPath}makers/maker-2.png` alt="maker-image")
+            .makers__slide.swiper-slide
+              img(src=`${imgPath}makers/maker-3.png` alt="maker-image")
+            .makers__slide.swiper-slide
+              img(src=`${imgPath}makers/maker-4.png` alt="maker-image")
+            .makers__slide.swiper-slide
+              img(src=`${imgPath}makers/maker-5.png` alt="maker-image")
+        button.makers__btn.makers__btn-prev(data-makers="prev-btn")
+          svg(width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.6772 20.1589C13.2937 20.6383 12.594 20.7161 12.1146 20.3325L0.996968 11.4384C0.733241 11.2274 0.579718 10.908 0.579718 10.5703C0.579718 10.2325 0.733242 9.91311 0.996968 9.70213L12.1146 0.808041C12.594 0.424471 13.2937 0.502207 13.6772 0.981669C14.0608 1.46113 13.9831 2.16075 13.5036 2.54432L3.47117 10.5703L13.5036 18.5962C13.9831 18.9798 14.0608 19.6794 13.6772 20.1589Z"
+              fill="#6F5CEA")
+        button.makers__btn.makers__btn-next(data-makers="next-btn")
+          svg(width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.907725 1.16729C1.29129 0.68783 1.99092 0.610094 2.47038 0.993663L13.588 9.88776C13.8517 10.0987 14.0052 10.4182 14.0052 10.7559C14.0052 11.0936 13.8517 11.4131 13.588 11.624L2.47037 20.5181C1.99091 20.9017 1.29129 20.824 0.907722 20.3445C0.524153 19.865 0.601889 19.1654 1.08135 18.7819L11.1138 10.7559L1.08135 2.72994C0.601892 2.34637 0.524157 1.64675 0.907725 1.16729Z"
+              fill="#6F5CEA")
+
+mixin banners(title, slider)
+  section.banners
+    .banners__wrap
+      if title
+        .banners__header
+          h2.banners__title #{ title }
+          .banners__btns(data-banners="btns")
+            button.banners__btn.banners__btn-prev 
+              svg(width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.6777 20.1589C13.2942 20.6383 12.5945 20.7161 12.1151 20.3325L0.997456 11.4384C0.733729 11.2274 0.580206 10.908 0.580206 10.5703C0.580206 10.2325 0.73373 9.91311 0.997456 9.70213L12.1151 0.808041C12.5945 0.424471 13.2942 0.502207 13.6777 0.981669C14.0613 1.46113 13.9836 2.16075 13.5041 2.54432L3.47165 10.5703L13.5041 18.5962C13.9836 18.9798 14.0613 19.6794 13.6777 20.1589Z"
+                  fill="#6F5CEA")
+            button.banners__btn.banners__btn-next
+              svg(width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.908213 1.16729C1.29178 0.68783 1.99141 0.610094 2.47087 0.993663L13.5885 9.88776C13.8522 10.0987 14.0057 10.4182 14.0057 10.7559C14.0057 11.0936 13.8522 11.4131 13.5885 11.624L2.47086 20.5181C1.9914 20.9017 1.29178 20.824 0.90821 20.3445C0.524642 19.865 0.602378 19.1654 1.08184 18.7819L11.1143 10.7559L1.08184 2.72994C0.602381 2.34637 0.524645 1.64675 0.908213 1.16729Z"
+                  fill="#6F5CEA")
+      if slider
+        .banners__slider.swiper(data-banners="slider")
+          .swiper-wrapper
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Майнинг под ключ
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-1-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-1.png` alt="card-img" loading="lazy")
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Сборка ферм
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-2-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-2.png` alt="card-img" loading="lazy")
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Ремонт фермы
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-3-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-3.png` alt="card-img" loading="lazy")
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Консультацуия
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-4-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-4.png` alt="card-img" loading="lazy")
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Разгон видеокарт
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-5-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-5.png` alt="card-img" loading="lazy")
+            a.banners__item.swiper-slide(href="#")
+              .banners__item-descr 
+                .banners__item-label Услуги
+                h3.banners__item-caption Сборка ферм
+              picture.banners__item-bg
+                source(srcset=`${imgPath}banners/card-6-mob.png` media="(max-width: 576px)")
+                img(src=`${imgPath}banners/card-6.png` alt="card-img" loading="lazy")
+      else
+        .banners__content
+          a.banners__item(href="#")
+            .banners__item-descr 
+              .banners__item-label Услуги
+              h3.banners__item-caption Майнинг под ключ
+            picture.banners__item-bg
+              source(srcset=`${imgPath}banners/card-1-mob.png` media="(max-width: 576px)")
+              img(src=`${imgPath}banners/card-1.png` alt="card-img" loading="lazy")
+          a.banners__item(href="#")
+            .banners__item-descr 
+              .banners__item-label Услуги
+              h3.banners__item-caption Сборка ферм
+            picture.banners__item-bg
+              source(srcset=`${imgPath}banners/card-2-mob.png` media="(max-width: 576px)")
+              img(src=`${imgPath}banners/card-2.png` alt="card-img" loading="lazy")
+
+mixin service-promo(title, text, photo)
+  section.service-promo
+    .service-promo__wrap
+      .service-promo__descr 
+        h1.service-promo__title #{ title }
+        p.service-promo__text #{ text }
+      .service-promo__img 
+        img(src=`${imgPath}service/service-promo/promo-${photo}.png` alt="service-promo-image" loading="lazy")

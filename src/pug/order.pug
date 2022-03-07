@@ -1,0 +1,15 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "order-page";
+
+block content
+  +links(["Главная", "Корзина"])
+  section.order
+    .order__wrap
+      h1.order__title Оформление заказа
+      form.order__content 
+        include parts/order/order-inputs.pug
+        .order__confirm
+          include parts/order/order-total.pug
+      include parts/order/order-code.pug

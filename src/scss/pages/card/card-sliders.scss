@@ -1,0 +1,150 @@
+.card-sliders {
+  margin-top: 70px;
+  @include to(1200px) {
+    margin-top: 55px;
+  }
+  @include to(1024px) {
+    margin-top: 40px;
+  }
+  @include to(768px) {
+    margin-top: 25px;
+  }
+  &__wrap {
+    @include wrap;
+  }
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__tabs {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(576px) {
+      overflow-x: auto;
+      padding-bottom: 15px;
+    }
+  }
+  &__tab {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #303239;
+    position: relative;
+    @include to(1024px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include to(576px) {
+      flex: 0 0 auto;
+      padding: 5px;
+    }
+    &:not(:last-child) {
+      margin-right: 50px;
+      @include to(1024px) {
+        margin-right: 30px;
+      }
+      @include to(576px) {
+        margin-right: 20px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      max-width: 0;
+      background-color: #6f5cea;
+      border-radius: 100px;
+      transition: max-width 0.3s;
+    }
+    &:hover {
+      &::before {
+        max-width: 100%;
+        transition: max-width 0.3s;
+      }
+    }
+    &--active {
+      &::before {
+        max-width: 100%;
+        transition: max-width 0.3s;
+      }
+    }
+  }
+  &__btns {
+    flex-flow: row nowrap;
+    align-items: center;
+    display: none;
+    &:first-child {
+      display: flex;
+    }
+    @include to(576px) {
+      display: none !important;
+    }
+  }
+  &__btn {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(158, 158, 158, 0.25);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    transition: background-color 0.3s, opacity 0.3s;
+    &-prev {
+      margin-right: 8px;
+    }
+    path {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      background-color: #6f5cea;
+      transition: background-color 0.3s;
+      path {
+        fill: #fff;
+        transition: fill 0.3s;
+      }
+    }
+    &.swiper-button-disabled {
+      opacity: 0.5;
+      transition: background-color 0.3s, opacity 0.3s;
+      &:hover {
+        opacity: 0.5;
+        background-color: #fff;
+        transition: background-color 0.3s, opacity 0.3s;
+        path {
+          fill: #6f5cea;
+          transition: fill 0.3s;
+        }
+      }
+    }
+  }
+  &__content {
+    margin-top: 40px;
+    @include to(1024px) {
+      margin-top: 30px;
+    }
+    @include to(576px) {
+      margin-top: 20px;
+    }
+    &--show {
+      display: block !important;
+      animation: fadeInRight 0.3s;
+    }
+    &--hide {
+      display: none !important;
+    }
+  }
+  &__slider {
+    display: none;
+  }
+}

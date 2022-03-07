@@ -1,0 +1,38 @@
+@import "./library/breakpoints";
+@import "./library/mixins";
+@import "./base/variables";
+@import "./base/mixins";
+
+@import "./base/normalize";
+@import "./base/fonts";
+
+@import "./base/templates";
+@import "./base/animation";
+
+@import "./base/common.scss";
+
+@import "./base/header.scss";
+@import "./base/footer.scss";
+@import "./base/links.scss";
+@import "./base/cart.scss";
+@import "./base/category.scss";
+@import "./base/banners.scss";
+@import "./base/advantages.scss";
+@import "./base/makers.scss";
+@import "./base/consultation.scss";
+@import "./base/text.scss";
+@import "./base/callback.scss";
+@import "./base/policy.scss";
+@import "./base/callback-modal.scss";
+@import "./base/modal-success.scss";
+@import "./base/error.scss";
+
+@import "./pages/catalog-outer/catalog-outer.scss";
+@import "./pages/catalog/catalog.scss";
+@import "./pages/card/card.scss";
+@import "./pages/basket/basket.scss";
+@import "./pages/order/order.scss";
+@import "./pages/main-page/main-page.scss";
+@import "./pages/contact/contact.scss";
+@import "./pages/about/about.scss";
+@import "./pages/service/service.scss";

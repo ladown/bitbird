@@ -1,0 +1,35 @@
+.links {
+  &__wrap {
+    @include wrap;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  a,
+  span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #989898;
+    @include to(576px) {
+      font-size: 10px;
+      line-height: 13px;
+    }
+  }
+  span {
+    margin: 2.5px 5px;
+  }
+  a {
+    margin: 2.5px 5px;
+    &:last-child {
+      pointer-events: none;
+    }
+    &:not(:last-child) {
+      transition: color 0.3s;
+      &:hover {
+        color: #6f5cea;
+        transition: color 0.3s;
+      }
+    }
+  }
+}

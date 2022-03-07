@@ -1,0 +1,148 @@
+.order-total {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: fit-content;
+  @include to(600px) {
+    margin-top: 150px;
+  }
+  &__upper {
+    padding: 40px;
+    background-color: #6f5cea;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    @include to(1024px) {
+      padding: 20px 30px;
+    }
+  }
+  &__icon {
+    @include to(1200px) {
+      max-width: 50px;
+      height: auto;
+    }
+    @include to(1024px) {
+      max-width: 45px;
+    }
+    @include to(768px) {
+      max-width: 40px;
+    }
+    @include to(576px) {
+      max-width: 35px;
+    }
+  }
+  &__header {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    color: #ffffff;
+    @include to(1200px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+    @include to(1024px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    @include to(768px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include to(576px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__subheader {
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    @include to(1024px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__block {
+    padding: 30px;
+    @include to(1024px) {
+      padding: 20px 30px;
+    }
+    @include to(576px) {
+      padding: 20px 0 0 0;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    @include to(600px) {
+      padding: 0 30px;
+    }
+  }
+  &__key {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #303239;
+    @include to(1024px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__value {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: #6f5cea;
+    min-width: 150px;
+    @include to(1200px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+    @include to(1024px) {
+      font-size: 20px;
+      line-height: 25px;
+      min-width: 140px;
+    }
+    @include to(768px) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include to(576px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 18px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    background-color: #6f5cea;
+    border-radius: 5px;
+    transition: background 0.3s;
+    @include to(1024px) {
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      line-height: 18px;
+      border-radius: 0px 0px 5px 5px;
+    }
+    &:hover {
+      background-color: #bfc5f9;
+      transition: background 0.3s;
+    }
+  }
+}

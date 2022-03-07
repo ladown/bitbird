@@ -1,0 +1,48 @@
+include ../../inc/settings.pug
+
+section.promo 
+  .promo__wrap 
+    .promo__item.promo__item-row-2
+      img.promo__item-img(src=`${imgPath}main-page/promo/prom-1.png` alt="promo-background")
+      .promo__item-content 
+        h2.promo__item-title Видеокарты для майнинга
+        .promo__item-cost От 50 000 р
+        button.promo__item-btn.promo__item-btn_light Подробнее
+    .promo__item.promo__item-col-2
+      img.promo__item-img(src=`${imgPath}main-page/promo/prom-2.png` alt="promo-background")
+      .promo__item-content
+        h2.promo__item-title Доверяй профессионалам
+        p.promo__item-text Профессиональная консультация и проработка стратегии майнинга
+        button.promo__item-btn.promo__item-btn_dark Подробнее
+    .promo__slider.swiper(data-promo="slider")
+      .swiper-wrapper
+        .promo__item.swiper-slide
+          img.promo__item-img(src=`${imgPath}main-page/promo/prom-3.png` alt="promo-background")
+          .promo__item-content
+            h2.promo__item-title Майнинг под ключ
+            .promo__item-descr
+              p.promo__item-text Полный коплекс услуг по подбору и проведению консультации по майнингу
+              a.promo__item-link.promo__item-link_light(href="#") Подробнее
+        .promo__item.swiper-slide
+          img.promo__item-img(src=`${imgPath}main-page/promo/prom-2.png` alt="promo-background")
+          .promo__item-content
+            h2.promo__item-title Доверяй профессионалам
+            .promo__item-descr
+              p.promo__item-text Профессиональная консультация и проработка стратегии майнинга
+              a.promo__item-link.promo__item-link_dark(href="#") Подробнее
+      .promo__slider-controls
+        button.promo__slider-btn.promo__slider-btn-prev(data-promo="prev-btn")
+          svg(width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.0972 19.5944C12.7136 20.0739 12.014 20.1516 11.5345 19.7681L0.416888 10.874C0.153162 10.663 -0.000361551 10.3436 -0.000361521 10.0058C-0.000361492 9.66808 0.153162 9.34866 0.416888 9.13768L11.5345 0.243587C12.014 -0.139982 12.7136 -0.0622464 13.0972 0.417215C13.4807 0.896675 13.403 1.5963 12.9235 1.97987L2.89109 10.0058L12.9235 18.0318C13.403 18.4153 13.4807 19.115 13.0972 19.5944Z"
+              fill="white")
+        nav.promo__slider-pagination(data-promo="pagination")
+        button.promo__slider-btn.promo__slider-btn-next(data-promo="next-btn")
+          svg(width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.243663 0.417291C0.627231 -0.0621698 1.32685 -0.139906 1.80631 0.243663L12.9239 9.13776C13.1877 9.34874 13.3412 9.66816 13.3412 10.0059C13.3412 10.3436 13.1877 10.6631 12.9239 10.874L1.80631 19.7681C1.32685 20.1517 0.627228 20.074 0.243659 19.5945C-0.139909 19.115 -0.0621731 18.4154 0.417287 18.0319L10.4497 10.0059L0.41729 1.97994C-0.0621702 1.59637 -0.139906 0.896751 0.243663 0.417291Z"
+              fill="white")

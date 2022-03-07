@@ -1,0 +1,11 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "about-page";
+
+block content
+  +links(['Главная', 'О компании'])
+  include parts/about/about-promo.pug
+  include inc/advantages.pug
+  +makers('Проверенные временем производители')
+  include parts/about/about-services.pug

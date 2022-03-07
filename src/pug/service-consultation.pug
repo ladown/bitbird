@@ -1,0 +1,11 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "service-page service-consultation";
+
+block content
+  +links(['Главная', 'Услуги', 'Консультация'])
+  +service-promo('Консультация', 'Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки соответствующий условий активизации. Значимость этих проблем настолько очевидна, что укрепление и развитие структуры способствует подготовки и реализации модели развития.', '3')
+  include parts/service/service-label.pug
+  include parts/service/service-person.pug
+  include parts/service/service-forms.pug

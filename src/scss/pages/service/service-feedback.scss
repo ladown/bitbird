@@ -1,0 +1,227 @@
+.service-feedback {
+  margin-top: 70px;
+  @include to(1024px) {
+    margin-top: 30px;
+  }
+  &__wrap {
+    @include wrap;
+    position: relative;
+    @include to(576px) {
+      padding-bottom: 50px;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__btn {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(158, 158, 158, 0.25);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    transition: background-color 0.3s, opacity 0.3s;
+    @include to(576px) {
+      background-color: transparent;
+      border-radius: unset;
+      padding: 5px;
+      box-shadow: unset;
+    }
+    &-prev {
+      margin-right: 8px;
+      @include to(576px) {
+        margin-right: 0;
+      }
+    }
+    svg {
+      @include to(576px) {
+        max-width: 10px;
+      }
+    }
+    path {
+      transition: fill 0.3s;
+      @include to(576px) {
+        fill: #b8b7b7;
+      }
+    }
+    &:hover {
+      background-color: #6f5cea;
+      transition: background-color 0.3s;
+      @include to(576px) {
+        background-color: transparent;
+      }
+      path {
+        fill: #fff;
+        transition: fill 0.3s;
+        @include to(576px) {
+          fill: #6f5cea;
+        }
+      }
+    }
+    &.swiper-button-disabled {
+      opacity: 0.5;
+      transition: background-color 0.3s, opacity 0.3s;
+      &:hover {
+        opacity: 0.5;
+        background-color: #fff;
+        transition: background-color 0.3s, opacity 0.3s;
+        @include to(576px) {
+          background-color: transparent;
+        }
+        path {
+          fill: #6f5cea;
+          transition: fill 0.3s;
+          @include to(576px) {
+            fill: #b8b7b7;
+          }
+        }
+      }
+    }
+  }
+  &__pagination {
+    bottom: unset !important;
+    left: unset !important;
+    width: auto !important;
+    display: none;
+    margin: 0 auto;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #b8b7b7;
+    transition: color 0.3s;
+    .swiper-pagination-current {
+      color: #6f5cea;
+      transition: color 0.3s;
+    }
+    @include to(576px) {
+      display: block;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__controls {
+    margin-top: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(576px) {
+      margin-top: 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: calc(100% - 40px);
+      margin-top: 15px;
+      display: flex;
+    }
+  }
+  &__slide {
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 25px;
+    @include to(1024px) {
+      padding: 15px 20px;
+    }
+    @include to(768px) {
+      padding: 10px 15px;
+    }
+    &-header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+    }
+    &-icon {
+      flex: 0 0 48px;
+      height: 48px;
+      width: 48px;
+      object-fit: cover;
+      margin-right: 15px;
+      @include to(1024px) {
+        flex: 0 0 43px;
+        height: 43px;
+        width: 43px;
+        margin-right: 10px;
+      }
+      @include to(768px) {
+        flex: 0 0 37px;
+        height: 37px;
+        width: 37px;
+      }
+      @include to(576px) {
+        flex: 0 0 35px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+    &-name {
+      margin-right: 15px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      color: #6f5cea;
+      @include to(1024px) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-right: 10px;
+      }
+    }
+    &-date {
+      margin-left: auto;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #b8b7b7;
+      @include to(1024px) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+    &-text {
+      margin-top: 20px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #000000;
+      @include to(1024px) {
+        margin-top: 15px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+  &__content {
+    margin-top: 20px;
+  }
+}

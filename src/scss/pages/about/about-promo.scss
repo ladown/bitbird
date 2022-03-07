@@ -1,0 +1,100 @@
+.about-promo {
+  @include to(1200px) {
+    margin-top: 5px;
+  }
+  @include to(1024px) {
+    margin-top: 10px;
+  }
+  @include to(768px) {
+    margin-top: 15px;
+  }
+  @include to(576px) {
+    margin-top: 20px;
+  }
+  &__wrap {
+    @include wrap;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(1024px) {
+      align-items: initial;
+      flex-flow: column nowrap;
+    }
+  }
+  &__descr {
+    flex: 0 1 100%;
+    margin-right: 30px;
+    @include to(1024px) {
+      margin-bottom: 30px;
+      margin-right: 0;
+      flex: auto;
+      width: 100%;
+    }
+    @include to(576px) {
+      margin-bottom: 15px;
+    }
+  }
+  &__img {
+    flex: 0 0 550px;
+    @include to(1024px) {
+      flex: auto;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    img {
+      border-radius: 10px;
+      display: block;
+      @include cover;
+      @include to(1024px) {
+        min-height: 140px;
+      }
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__text {
+    margin-top: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #303239;
+    @include to(1024px) {
+      font-size: 14px;
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+        @include to(1024px) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    strong,
+    b {
+      font-weight: 600;
+    }
+  }
+}

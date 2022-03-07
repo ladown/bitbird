@@ -1,0 +1,135 @@
+.contact-promo {
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      margin-top: 5px;
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      margin-top: 10px;
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      margin-top: 15px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    @include to(1024px) {
+      margin-top: 20px;
+    }
+    @include to(768px) {
+      flex-flow: column nowrap;
+      justify-content: initial;
+    }
+  }
+  &__descr {
+    flex: 0 0 380px;
+    margin-right: 100px;
+    @include to(1200px) {
+      margin-right: 50px;
+      flex: 0 0 370px;
+    }
+    @include to(1024px) {
+      flex: 0 0 320px;
+      margin-right: 25px;
+    }
+    @include to(768px) {
+      flex: auto;
+      width: 100%;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include to(1024px) {
+        margin-bottom: 20px;
+      }
+    }
+    &-header {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 138%;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-subheader {
+      margin-top: 5px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 138%;
+      color: #303239;
+      @include to(1024px) {
+        font-size: 14px;
+      }
+    }
+  }
+  a.contact-promo__item-subheader {
+    display: flex;
+    width: fit-content;
+    transition: color 0.3s;
+    &:hover {
+      color: #6f5cea;
+      transition: color 0.3s;
+    }
+  }
+  &__map {
+    flex: 0 1 720px;
+    padding: 0 15px;
+    border-left: 1.5px solid #e4e4e4;
+    border-right: 1.5px solid #e4e4e4;
+    @include to(1024px) {
+      padding: 0 10px;
+    }
+    @include to(768px) {
+      padding: 0;
+      flex: auto;
+      width: 100%;
+      border: none;
+    }
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      @include to(768px) {
+        height: 400px;
+      }
+    }
+  }
+}

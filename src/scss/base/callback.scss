@@ -1,0 +1,187 @@
+.callback {
+  margin-top: 70px;
+  background: url($imgPath + "backgrounds/callback/callback-bg.svg") center center / cover no-repeat;
+  @include to(1024px) {
+    margin-top: 30px;
+  }
+  @include to(576px) {
+    background: url($imgPath + "backgrounds/callback/callback-bg-mob.svg") center center / cover no-repeat;
+  }
+  &__wrap {
+    @include wrap;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    padding: 70px 20px;
+    @include to(1024px) {
+      padding: 25px 20px;
+    }
+    @include to(768px) {
+      flex-flow: column nowrap;
+      align-items: initial;
+    }
+  }
+  &__descr {
+    flex: 0 1 520px;
+    margin-right: 150px;
+    @include to(1200px) {
+      margin-right: 100px;
+    }
+    @include to(1024px) {
+      flex: 0 1 410px;
+      margin-right: 50px;
+    }
+    @include to(768px) {
+      flex: auto;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 60px;
+    }
+  }
+  &__title {
+    width: 100%;
+    max-width: 420px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #ffffff;
+    @include to(1200px) {
+      max-width: 410px;
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      max-width: 350px;
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      max-width: unset;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__subtitle {
+    margin-top: 25px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    @include to(1024px) {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  &__form {
+    flex: 0 1 380px;
+    @include to(1024px) {
+      flex: 0 1 320px;
+    }
+    @include to(768px) {
+      flex: auto;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+  &__fields {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  &__input {
+    width: 100%;
+    padding: 10px 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    @include to(1024px) {
+      padding: 10px 15px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__footer {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    @include to(1024px) {
+      margin-top: 20px;
+    }
+  }
+  &__btn {
+    width: 100%;
+    max-width: 220px;
+    padding: 18px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    background-color: #303239;
+    border-radius: 5px;
+    transition: background 0.3s;
+    @include to(1024px) {
+      max-width: 320px;
+      padding: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include to(768px) {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    @include to(576px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &:hover {
+      background-color: #6f5cea;
+      transition: background 0.3s;
+    }
+  }
+  &__policy {
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #303239;
+    @include to(1024px) {
+      font-size: 14px;
+    }
+    @include to(768px) {
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto 0 auto;
+    }
+    @include to(576px) {
+      font-size: 12px;
+    }
+    a {
+      color: #fff;
+      transition: color 0.3s;
+      &:hover {
+        color: #6f5cea;
+        transition: color 0.3s;
+      }
+    }
+  }
+}

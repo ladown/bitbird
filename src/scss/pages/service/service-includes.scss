@@ -1,0 +1,115 @@
+.service-includes {
+  margin-top: 80px;
+  @include to(1024px) {
+    margin-top: 30px;
+  }
+  &__wrap {
+    @include wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__content {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+    @include to(1024px) {
+      margin-top: 20px;
+      gap: 35px 25px;
+    }
+    @include to(768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 44px 36px 20px 36px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-height: 320px;
+    @include to(1024px) {
+      padding: 35px 20px;
+      min-height: 260px;
+    }
+    @include to(768px) {
+      min-height: 220px;
+    }
+    &-counter {
+      position: absolute;
+      left: 20px;
+      top: -15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background-color: #6f5cea;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+    }
+    &-caption {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+      color: #6f5cea;
+      @include to(1200px) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @include to(1024px) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      @include to(768px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @include to(576px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+    &-text {
+      width: 100%;
+      max-width: 460px;
+      margin-top: 15px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126.19%;
+      color: #303239;
+      @include to(1024px) {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}

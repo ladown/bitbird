@@ -1,0 +1,18 @@
+[
+  {
+    "img": "./img/basket/basket-1.png",
+    "caption": "ВИДЕОКАРТА NVIDIA GFORCE GTX 2060",
+    "count": "1 шт - 456 000 р",
+    "price": "456 000 р"
+  },
+  {
+    "img": "./img/basket/basket-2.png",
+    "caption": "ВИДЕОКАРТА NVIDIA GFORCE GTX 3060",
+    "price": "456 000 р"
+  },
+  {
+    "img": "./img/basket/basket-3.png",
+    "caption": "ВИДЕОКАРТА NVIDIA GFORCE GTX 3060",
+    "price": "456 000 р"
+  }
+]

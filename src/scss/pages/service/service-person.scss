@@ -1,0 +1,111 @@
+.service-person {
+  margin-top: 10px;
+  &__wrap {
+    @include wrap;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    @include to(1024px) {
+      flex-flow: column nowrap;
+      align-items: initial;
+    }
+  }
+  &__descr {
+    flex: 0 1 460px;
+    margin-right: 70px;
+    @include to(1200px) {
+      flex: 0 1 500px;
+      margin-right: 50px;
+    }
+    @include to(1024px) {
+      margin-right: 0;
+      flex: auto;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    @include to(576px) {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 42px;
+      line-height: 48px;
+    }
+    @include to(1024px) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include to(768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__list {
+    margin-top: 20px;
+    list-style-type: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #303239;
+    @include to(1024px) {
+      font-size: 14px;
+    }
+    li {
+      position: relative;
+      padding-left: 27px;
+      @include to(1024px) {
+        padding-left: 20px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 25px;
+        @include to(1024px) {
+          margin-bottom: 15px;
+        }
+      }
+      &::before {
+        content: "";
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        background-color: #6f5cea;
+        border-radius: 100%;
+        @include to(1024px) {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+  &__img {
+    flex: 0 1 690px;
+    @include to(1200px) {
+      flex: 0 1 650px;
+    }
+    @include to(1024px) {
+      flex: auto;
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    @include to(576px) {
+      display: none;
+    }
+    img {
+      display: block;
+      @include cover;
+    }
+  }
+}

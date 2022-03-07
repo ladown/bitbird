@@ -1,0 +1,233 @@
+.callback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+  &--opened {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  @include to(576px) {
+    padding: 15px;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #303239;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+    .callback-modal--opened & {
+      opacity: 0.65;
+      visibility: visible;
+      pointer-events: all;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  }
+  &__wrap {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+    padding: 25px 35px;
+    top: -100%;
+    transform: translateY(-100%);
+    transition: all 0.3s;
+    .callback-modal--opened & {
+      top: 0;
+      transform: translateY(0);
+      transition: all 0.3s;
+    }
+    @include to(1024px) {
+      padding: 25px 20px;
+    }
+  }
+  &__close {
+    padding: 5px;
+    display: flex;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    @include to(1200px) {
+      top: 27px;
+    }
+    @include to(1024px) {
+      top: 24px;
+    }
+    @include to(768px) {
+      top: 22px;
+    }
+    @include to(576px) {
+      top: 5px;
+      right: 5px;
+    }
+    svg {
+      pointer-events: none;
+      @include to(1024px) {
+        max-width: 25px;
+      }
+      @include to(576px) {
+        max-width: 20px;
+      }
+    }
+    rect {
+      transition: fill 0.3s;
+    }
+    &:hover {
+      rect {
+        fill: #6f5cea;
+        transition: fill 0.3s;
+      }
+    }
+  }
+  &__title {
+    width: 100%;
+    max-width: calc(100% - 50px);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #303239;
+    @include to(1200px) {
+      font-size: 40px;
+      line-height: 46px;
+    }
+    @include to(1024px) {
+      font-size: 34px;
+      line-height: 41px;
+    }
+    @include to(768px) {
+      font-size: 28px;
+      line-height: 35px;
+    }
+    @include to(576px) {
+      font-size: 24px;
+      line-height: 31px;
+      max-width: calc(100% - 20px);
+    }
+  }
+  &__inputs {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(1024px) {
+      margin-top: 25px;
+    }
+    @include to(768px) {
+      flex-flow: column nowrap;
+      align-items: initial;
+    }
+  }
+  &__input {
+    flex: 0 1 100%;
+    border: 1.5px solid #e4e4e4;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #303239;
+    @include to(1024px) {
+      padding: 10px 15px;
+    }
+    @include to(768px) {
+      flex: auto;
+      width: 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 10px;
+      @include to(768px) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__footer {
+    margin: 50px auto 0 auto;
+    width: 100%;
+    max-width: 610px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include to(1024px) {
+      margin-top: 25px;
+    }
+    @include to(768px) {
+      flex-flow: column nowrap;
+      align-items: initial;
+    }
+  }
+  &__btn {
+    width: 100%;
+    max-width: 220px;
+    padding: 18px;
+    margin-right: 25px;
+    background-color: #6f5cea;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+    transition: background 0.3s;
+    @include to(1024px) {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 12px;
+    }
+    @include to(768px) {
+      max-width: 320px;
+      margin: 0 auto 15px auto;
+    }
+    &:hover {
+      background-color: #bfc5f9;
+      transition: background 0.3s;
+    }
+  }
+  &__policy {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 126.19%;
+    color: #303239;
+    @include to(1024px) {
+      font-size: 14px;
+    }
+    @include to(768px) {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    a {
+      text-decoration-line: underline;
+      color: #b8b7b7;
+      transition: color 0.3s;
+      &:hover {
+        color: #6f5cea;
+        transition: color 0.3s;
+      }
+    }
+  }
+}

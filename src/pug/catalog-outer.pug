@@ -1,0 +1,9 @@
+extends inc/layout.pug
+
+block append vars
+  - bodyClass = "catalog-outer-page";
+
+block content
+  +links(["Главная", "Каталог"])
+  include parts/catalog-outer/catalog-goods.pug
+  +banners

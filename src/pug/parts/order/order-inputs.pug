@@ -1,0 +1,35 @@
+.order-inputs 
+  .order-inputs__item.order-inputs__item-data
+    .order-inputs__title Контактные данные
+    .order-inputs__fields 
+      .order-inputs__input 
+        input(type="text" placeholder="Имя")
+      .order-inputs__input 
+        input(type="text" placeholder="Электронная почта")
+      .order-inputs__input 
+        input(type="text" placeholder="Номер телефона")
+  .order-inputs__item.order-inputs__item-addr
+    .order-inputs__title Адрес доставки
+    .order-inputs__fields 
+      .order-inputs__input 
+        input(type="text" placeholder="Город")
+      .order-inputs__input 
+        input(type="text" placeholder="Улица, дом, квартира")
+      .order-inputs__input 
+        input(type="text" placeholder="Почтовый индекс")
+  .order-inputs__item.order-inputs__item-selects
+    .order-inputs__column
+      .order-inputs__title Способ оплаты
+      select.order-inputs__select 
+        option(value="Способ оплаты") Способ оплаты
+        option(value="Картой онлайн") Картой онлайн
+        option(value="Наличными") Наличными
+    .order-inputs__column
+      .order-inputs__title Способ доставки
+      select.order-inputs__select 
+        option(value="Способ доставки") Способ доставки
+        option(value="Доставка") Доставка
+        option(value="Самовывоз") Самовывоз
+  .order-inputs__item.order-inputs__item-additional
+    .order-inputs__title Дополнительная информация
+    textarea.order-inputs__textarea(placeholder="Введите сообщение")
