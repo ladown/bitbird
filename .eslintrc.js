@@ -13,5 +13,6 @@ module.exports = {
   },
   rules: {
     "no-inner-declarations": "off",
+    "comma-dangle": "always",
   },
 };

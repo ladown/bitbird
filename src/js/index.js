@@ -12,6 +12,7 @@ import "./pug-files";
 import "../scss/style.scss";
 
 window.addEventListener("DOMContentLoaded", () => {
+  let a = "1";
   const body = document.body;
   const header = document.querySelector("header.header");
 
