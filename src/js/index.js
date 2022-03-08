@@ -674,11 +674,19 @@ window.addEventListener("DOMContentLoaded", () => {
   if (cardModalOpenBtns.length) {
     const cardModal = document.querySelector('[data-card-modal="modal"]');
 
-    cardModalOpenBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        cardModal.classList.add("card-modal--opened");
-        body.classList.add("blocked-scroll");
+    const form = document.querySelector("form.cart");
+    let observer = new MutationObserver((mutationRecords) => {
+      let addedNodes = mutationRecords[0].addedNodes;
+      addedNodes.forEach((item) => {
+        if (item.tagName.toLowerCase() === "a" && item.classList.contains("added_to_cart")) {
+          cardModal.classList.add("card-modal--opened");
+          body.classList.add("blocked-scroll");
+        }
       });
+    });
+    observer.observe(form, {
+      childList: true,
+      subtree: true,
     });
 
     cardModal.addEventListener("click", (event) => {

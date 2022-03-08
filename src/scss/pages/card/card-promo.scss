@@ -15,31 +15,16 @@
   }
   &__sliders {
     position: relative;
-    flex: 0 1 100%;
+    flex: 0 1 500px;
+    width: 100%;
+    max-width: 500px;
     @include to(1024px) {
       flex: auto;
       margin: 0 auto;
+      max-width: 650px;
     }
-    .card-promo__descr-complex & {
-      max-width: 500px;
-      @include to(1024px) {
-        max-width: 650px;
-      }
-      @include to(660px) {
-        max-width: 100%;
-      }
-    }
-    .card-promo__descr-simple & {
-      max-width: 670px;
-      @include to(1200px) {
-        max-width: 500px;
-      }
-      @include to(1024px) {
-        max-width: 650px;
-      }
-      @include to(660px) {
-        max-width: 100%;
-      }
+    @include to(660px) {
+      max-width: 100%;
     }
   }
   &__img {
@@ -76,7 +61,7 @@
     }
   }
   &__descr {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
     margin-left: 40px;
     @include to(1300px) {
       margin-left: 30px;
@@ -88,26 +73,6 @@
     }
     @include to(576px) {
       margin-top: 15px;
-    }
-    .card-promo__descr-complex & {
-      flex: 0 0 680px;
-      @include to(1300px) {
-        flex: 0 1 100%;
-      }
-      @include to(1024px) {
-        flex: auto;
-        width: 100%;
-      }
-    }
-    .card-promo__descr-simple & {
-      flex: 0 0 510px;
-      @include to(1300px) {
-        flex: 0 1 100%;
-      }
-      @include to(1024px) {
-        flex: auto;
-        width: 100%;
-      }
     }
     &-specs {
       display: none;
@@ -130,7 +95,7 @@
       flex: 0 0 375px;
       margin-right: 50px;
       @include to(1300px) {
-        flex: 0 0 300px;
+        flex: 0 0 350px;
         margin-right: 25px;
       }
       @include to(1200px) {
@@ -265,18 +230,14 @@
         margin-top: 15px;
       }
     }
-    @include to(1200px) {
-      font-size: 40px;
-      line-height: 46px;
-    }
     @include to(1024px) {
       margin-top: 15px;
-      font-size: 32px;
-      line-height: 38px;
+      font-size: 22px;
+      line-height: 27px;
     }
     @include to(768px) {
-      font-size: 26px;
-      line-height: 32px;
+      font-size: 20px;
+      line-height: 25px;
     }
     @include to(576px) {
       font-size: 18px;
@@ -319,14 +280,10 @@
     background-position: 95% 50%;
     @include to(1024px) {
       margin-top: 25px;
-      max-width: 370px;
-    }
-    @include to(768px) {
-      max-width: 345px;
+      max-width: 375px;
     }
     @include to(576px) {
-      max-width: 100%;
-      max-width: 285px;
+      max-width: 340px;
     }
     select {
       font-weight: normal;
@@ -480,10 +437,29 @@
     }
   }
   &__counter {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
+    position: relative;
+    .card-promo__descr-interaction & {
+      @include to(1300px) {
+        max-width: 300px;
+      }
+      @include to(1024px) {
+        max-width: 160px;
+      }
+    }
+    .card-promo__descr-simple & {
+      max-width: 220px;
+      @include to(1024px) {
+        max-width: 160px;
+      }
+    }
     .quantity {
       width: 100%;
+      height: 100%;
+      position: absolute;
     }
     &-btn {
       padding: 15px;
@@ -496,9 +472,12 @@
       box-shadow: 0px 4px 4px rgba(158, 158, 158, 0.25);
       border-radius: 5px;
       transition: background 0.3s;
+      flex: 0 0 58px;
+      z-index: 2;
       @include to(1024px) {
         padding: 10px;
         width: 39px;
+        flex: 0 0 39px;
         height: 39px;
       }
       svg {
@@ -517,41 +496,33 @@
       }
     }
     &-input {
+      position: absolute;
+      left: 30px;
+      top: 0;
       width: 100%;
-      max-width: 100px;
+      max-width: calc(100% - 60px);
       text-align: center;
       outline: none;
       border: none;
       background-color: #ffffff;
       border-radius: 5px;
-      padding: 15px 5px;
+      padding: 15px 40px;
       font-weight: 600;
       font-size: 24px;
       line-height: 31px;
       color: #303239;
-      .card-promo__descr-interaction & {
-        max-width: 185px;
-        @include to(1024px) {
-          max-width: 75px;
-        }
-        @include to(768px) {
-          max-width: 50px;
-        }
-        @include to(576px) {
-          max-width: 30px;
-        }
-      }
+      z-index: 1;
+      max-height: 58px;
       @include to(1024px) {
+        left: 20px;
+        max-width: calc(100% - 40px);
+        max-height: 39px;
         font-size: 18px;
         line-height: 23px;
-        padding: 7px 3px;
-        max-width: 75px;
-      }
-      @include to(768px) {
-        max-width: 50px;
+        padding: 10px 30px;
       }
       @include to(576px) {
-        max-width: 30px;
+        padding: 10px 25px;
       }
     }
     input::-webkit-outer-spin-button,
@@ -599,5 +570,13 @@
       line-height: 19px;
       color: #303239;
     }
+  }
+  .cart {
+    display: block;
+    flex-flow: initial;
+    position: initial;
+    overflow: initial;
+    border-radius: initial;
+    height: initial;
   }
 }
