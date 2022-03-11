@@ -80,10 +80,6 @@
         -webkit-text-fill-color: unset;
         transition: all 0.3s;
       }
-      &::before {
-        max-width: 100%;
-        transition: max-width 0.3s;
-      }
     }
     &:not(:last-child) {
       @include to(800px) {

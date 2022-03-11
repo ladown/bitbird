@@ -3,6 +3,8 @@ body {
   position: relative;
   font-family: "TTFirsNeue", sans-serif;
   &.blocked-scroll {
+    -ms-touch-action: none;
+    touch-action: none;
     overflow: hidden !important;
   }
 }

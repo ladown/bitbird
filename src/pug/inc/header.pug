@@ -74,32 +74,32 @@ header.header
         a(href="#") Гарантия\возврат
         .header-mob__catalog 
           a(href="#" data-catalog-mob="open-btn") 
-            span Контакты
+            span Каталог
             img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
           .header-mob__catalog-block
             .header-mob__catalog-item
-              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
                 span Майнинг фермы
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
                 a(href="#") Фермы на NVIDIA
                 a(href="#") Фермы на AMD
             .header-mob__catalog-item
-              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
                 span Видеокарты
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
                 a(href="#") Видеокарты на NVIDIA
                 a(href="#") Видеокарты на AMD
             .header-mob__catalog-item
-              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn") 
                 span Готовые тушки
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
                 a(href="#") Видеокарты на NVIDIA
                 a(href="#") Видеокарты на AMD
             .header-mob__catalog-item
-              button.header-mob__catalog-btn(data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
                 span Комплектующие
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
@@ -132,6 +132,50 @@ header.header
           img(src=`${imgPath}/icons/whatsapp-icon.svg` alt="whatsapp-icon" loading="lazy")
         a(href="#")
           img(src=`${imgPath}/icons/telegram-icon.svg` alt="telegram-icon" loading="lazy")
+  //- .header__catalog(data-catalog="block")
+  //-   .header__catalog-overlay(data-catalog="overlay")
+  //-   .header__catalog-wrap
+  //-     button.header__catalog-close(data-catalog="close-btn")
+  //-       svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+  //-         rect(x="28.4016" y="0.000244141" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(45 28.4016 0.000244141)" fill="#B8B7B7")
+  //-         rect(x="0.000244141" y="3.55029" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(-45 0.000244141 3.55029)" fill="#B8B7B7")
+  //-     .header__catalog-title Каталог
+  //-     .header__catalog-items
+  //-       .header__catalog-column
+  //-         a.header__catalog-label(href="#") Майнинг фермы
+  //-         .header__catalog-links 
+  //-           a.header__catalog-link(href="#") Фермы на NVIDIA
+  //-           a.header__catalog-link(href="#") Фермы на AMD
+  //-         a.header__catalog-label(href="#") Видеокарты
+  //-         .header__catalog-links 
+  //-           a.header__catalog-link(href="#") Видеокарты NVIDIA
+  //-           a.header__catalog-link(href="#") Видеокарты AMD
+  //-         a.header__catalog-label(href="#") Готовые тушки
+  //-       .header__catalog-column
+  //-         a.header__catalog-label(href="#") Комплектующие
+  //-         .header__catalog-links.header__catalog-links-columns
+  //-           .header__catalog-column
+  //-             a.header__catalog-link(href="#") Аппаратные кошельки
+  //-             a.header__catalog-link(href="#") Райзера и переходники
+  //-             a.header__catalog-link(href="#") Реобасы
+  //-             a.header__catalog-link(href="#") Умные розетки
+  //-             a.header__catalog-link(href="#") Ваттметры
+  //-             a.header__catalog-link(href="#") Ватдоги
+  //-             a.header__catalog-link(href="#") Блоки питания
+  //-             a.header__catalog-link(href="#") Охлаждение
+  //-           .header__catalog-column
+  //-             a.header__catalog-link(href="#") Материнские платы
+  //-             a.header__catalog-link(href="#") Жесткие диски для майнинга
+  //-             ul.header__catalog-list
+  //-               li 
+  //-                 a.header__catalog-link(href="#") HDD для майнинга
+  //-               li 
+  //-                 a.header__catalog-link(href="#") SSD NVME для майнинга
+  //-               li 
+  //-                 a.header__catalog-link(href="#") SSD для майнинга
+  //-             a.header__catalog-link(href="#") Оперативная память
+  //-             a.header__catalog-link(href="#") Процессоры
+  //-             a.header__catalog-link(href="#") Корпусы
   .header__catalog(data-catalog="block")
     .header__catalog-overlay(data-catalog="overlay")
     .header__catalog-wrap
@@ -141,38 +185,38 @@ header.header
           rect(x="0.000244141" y="3.55029" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(-45 0.000244141 3.55029)" fill="#B8B7B7")
       .header__catalog-title Каталог
       .header__catalog-items
-        .header__catalog-column
+        .header__catalog-item
           a.header__catalog-label(href="#") Майнинг фермы
           .header__catalog-links 
             a.header__catalog-link(href="#") Фермы на NVIDIA
             a.header__catalog-link(href="#") Фермы на AMD
+        .header__catalog-item
           a.header__catalog-label(href="#") Видеокарты
           .header__catalog-links 
             a.header__catalog-link(href="#") Видеокарты NVIDIA
             a.header__catalog-link(href="#") Видеокарты AMD
+        .header__catalog-item
           a.header__catalog-label(href="#") Готовые тушки
-        .header__catalog-column
+        .header__catalog-item.header__catalog-item-span
           a.header__catalog-label(href="#") Комплектующие
           .header__catalog-links.header__catalog-links-columns
-            .header__catalog-column
-              a.header__catalog-link(href="#") Аппаратные кошельки
-              a.header__catalog-link(href="#") Райзера и переходники
-              a.header__catalog-link(href="#") Реобасы
-              a.header__catalog-link(href="#") Умные розетки
-              a.header__catalog-link(href="#") Ваттметры
-              a.header__catalog-link(href="#") Ватдоги
-              a.header__catalog-link(href="#") Блоки питания
-              a.header__catalog-link(href="#") Охлаждение
-            .header__catalog-column
-              a.header__catalog-link(href="#") Материнские платы
-              a.header__catalog-link(href="#") Жесткие диски для майнинга
-              ul.header__catalog-list
-                li 
-                  a.header__catalog-link(href="#") HDD для майнинга
-                li 
-                  a.header__catalog-link(href="#") SSD NVME для майнинга
-                li 
-                  a.header__catalog-link(href="#") SSD для майнинга
-              a.header__catalog-link(href="#") Оперативная память
-              a.header__catalog-link(href="#") Процессоры
-              a.header__catalog-link(href="#") Корпусы
+            a.header__catalog-link(href="#") Аппаратные кошельки
+            a.header__catalog-link(href="#") Райзера и переходники
+            a.header__catalog-link(href="#") Реобасы
+            a.header__catalog-link(href="#") Умные розетки
+            a.header__catalog-link(href="#") Ваттметры
+            a.header__catalog-link(href="#") Ватдоги
+            a.header__catalog-link(href="#") Блоки питания
+            a.header__catalog-link(href="#") Охлаждение
+            a.header__catalog-link(href="#") Материнские платы
+            a.header__catalog-link(href="#") Жесткие диски для майнинга
+            ul.header__catalog-list
+              li 
+                a.header__catalog-link(href="#") HDD для майнинга
+              li 
+                a.header__catalog-link(href="#") SSD NVME для майнинга
+              li 
+                a.header__catalog-link(href="#") SSD для майнинга
+            a.header__catalog-link(href="#") Оперативная память
+            a.header__catalog-link(href="#") Процессоры
+            a.header__catalog-link(href="#") Корпусы

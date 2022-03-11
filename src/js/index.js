@@ -1,6 +1,6 @@
 "use strict";
 
-import Swiper, { Navigation, Pagination, Grid, Thumbs } from "swiper";
+import Swiper, { Navigation, Pagination, Grid, Thumbs, Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,7 +12,6 @@ import "./pug-files";
 import "../scss/style.scss";
 
 window.addEventListener("DOMContentLoaded", () => {
-  let a = "1";
   const body = document.body;
   const header = document.querySelector("header.header");
 
@@ -76,21 +75,26 @@ window.addEventListener("DOMContentLoaded", () => {
   const openCatalogMobBtn = document.querySelector('[data-catalog-mob="open-btn"]');
 
   openCatalogMobBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    header.classList.toggle("header__catalog-mob--opened");
+    if (event.target && event.target.tagName.toLowerCase() === "img") {
+      event.preventDefault();
+      header.classList.toggle("header__catalog-mob--opened");
+    }
   });
 
   const openCataloAccordionBtns = document.querySelectorAll('[data-catalog-accordion="open-btn"]');
   openCataloAccordionBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      let parentEl = this.parentElement;
-      if (parentEl.classList.contains("header-mob__catalog-item--opened")) {
-        parentEl.classList.remove("header-mob__catalog-item--opened");
-      } else {
-        openCataloAccordionBtns.forEach((item) => {
-          item.parentElement.classList.remove("header-mob__catalog-item--opened");
-        });
-        parentEl.classList.add("header-mob__catalog-item--opened");
+    btn.addEventListener("click", function (event) {
+      if (event.target && event.target.tagName.toLowerCase() === "img") {
+        event.preventDefault();
+        let parentEl = this.parentElement;
+        if (parentEl.classList.contains("header-mob__catalog-item--opened")) {
+          parentEl.classList.remove("header-mob__catalog-item--opened");
+        } else {
+          openCataloAccordionBtns.forEach((item) => {
+            item.parentElement.classList.remove("header-mob__catalog-item--opened");
+          });
+          parentEl.classList.add("header-mob__catalog-item--opened");
+        }
       }
     });
   });
@@ -124,8 +128,9 @@ window.addEventListener("DOMContentLoaded", () => {
     new Swiper('[data-slider="catalog-popular"]', {
       loop: true,
       spaceBetween: 15,
-      modules: [Navigation, Grid],
-      preventClicksPropagation: false,
+      mousewheel: true,
+      modules: [Navigation, Grid, Mousewheel],
+      simulateTouch: false,
       navigation: {
         nextEl: '[data-slider="catalog-popular-btns"] .catalog-popular__btn-next',
         prevEl: '[data-slider="catalog-popular-btns"] .catalog-popular__btn-prev',
@@ -145,6 +150,10 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       },
       on: {
+        slideChange: function (swiper) {
+          if (!swiper.params.debugger) return;
+          console.log("slideChange", swiper.previousIndex, "->", swiper.activeIndex);
+        },
         init: function (swiper) {
           if (window.outerWidth <= 576) {
             if (swiper.enabled) {
@@ -256,9 +265,10 @@ window.addEventListener("DOMContentLoaded", () => {
       );
       new Swiper(slider, {
         spaceBetween: 15,
-        modules: [Navigation],
         observer: true,
-        preventClicksPropagation: false,
+        mousewheel: true,
+        modules: [Navigation, Mousewheel],
+        simulateTouch: false,
         navigation: sliderBtns[i],
         breakpoints: {
           0: {
@@ -483,8 +493,9 @@ window.addEventListener("DOMContentLoaded", () => {
       );
       new Swiper(slider, {
         spaceBetween: 15,
-        preventClicksPropagation: false,
-        modules: [Navigation],
+        mousewheel: true,
+        modules: [Navigation, Mousewheel],
+        simulateTouch: false,
         observer: true,
         navigation: sliderBtns[i],
         breakpoints: {
@@ -674,20 +685,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (cardModalOpenBtns.length) {
     const cardModal = document.querySelector('[data-card-modal="modal"]');
 
-    const form = document.querySelector("form.cart");
-    let observer = new MutationObserver((mutationRecords) => {
-      let addedNodes = mutationRecords[0].addedNodes;
-      addedNodes.forEach((item) => {
-        if (item.tagName.toLowerCase() === "a" && item.classList.contains("added_to_cart")) {
-          cardModal.classList.add("card-modal--opened");
-          body.classList.add("blocked-scroll");
-        }
-      });
-    });
-    observer.observe(form, {
-      childList: true,
-      subtree: true,
-    });
+    trakedForAddingToCart("form.cart");
 
     cardModal.addEventListener("click", (event) => {
       if (event.target && (event.target.dataset.cardModal === "overlay" || event.target.dataset.cardModal === "btn-cansel")) {
@@ -703,7 +701,37 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  if (document.querySelector(".cart")) {
+    trakedForAddingToCart(".cart .cart__descr");
+  }
 });
+
+function trakedForAddingToCart(trakBlockSelector) {
+  const blocksToObserve = document.querySelectorAll(trakBlockSelector);
+  if (blocksToObserve.length) {
+    blocksToObserve.forEach((block) => {
+      let observer = new MutationObserver((mutationRecords) => {
+        let addedNodes = mutationRecords[0].addedNodes;
+        addedNodes.forEach((item) => {
+          if (
+            item.tagName.toLowerCase() === "a" &&
+            item.classList.contains("added_to_cart") &&
+            !document.querySelector('[data-card-modal="modal"]').classList.contains("card-modal--opened")
+          ) {
+            item.remove();
+            document.querySelector('[data-card-modal="modal"]').classList.add("card-modal--opened");
+            body.classList.add("blocked-scroll");
+          }
+        });
+      });
+      observer.observe(block, {
+        childList: true,
+        subtree: true,
+      });
+    });
+  }
+}
 
 function generateBtns(btnClasses, btnsArray, btnsWrapClass, buttonsWrap, wrap) {
   let btnsWrap = document.createElement("div");
