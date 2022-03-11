@@ -130,7 +130,6 @@ window.addEventListener("DOMContentLoaded", () => {
       spaceBetween: 15,
       mousewheel: true,
       modules: [Navigation, Grid, Mousewheel],
-      simulateTouch: false,
       navigation: {
         nextEl: '[data-slider="catalog-popular-btns"] .catalog-popular__btn-next',
         prevEl: '[data-slider="catalog-popular-btns"] .catalog-popular__btn-prev',
@@ -138,15 +137,19 @@ window.addEventListener("DOMContentLoaded", () => {
       breakpoints: {
         576: {
           slidesPerView: 2,
+          slidesPerGroup: 2,
         },
         768: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
         },
         1024: {
           slidesPerView: 4,
+          slidesPerGroup: 4,
         },
         1200: {
           slidesPerView: 5,
+          slidesPerGroup: 5,
         },
       },
       on: {
@@ -268,20 +271,23 @@ window.addEventListener("DOMContentLoaded", () => {
         observer: true,
         mousewheel: true,
         modules: [Navigation, Mousewheel],
-        simulateTouch: false,
         navigation: sliderBtns[i],
         breakpoints: {
           0: {
             slidesPerView: 2,
+            slidesPerGroup: 2,
           },
           768: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
           },
           1024: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
           },
           1200: {
             slidesPerView: 5,
+            slidesPerGroup: 5,
           },
         },
       });
@@ -495,21 +501,24 @@ window.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 15,
         mousewheel: true,
         modules: [Navigation, Mousewheel],
-        simulateTouch: false,
         observer: true,
         navigation: sliderBtns[i],
         breakpoints: {
           0: {
             slidesPerView: 2,
+            slidesPerGroup: 2,
           },
           768: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
           },
           1024: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
           },
           1200: {
             slidesPerView: 5,
+            slidesPerGroup: 5,
           },
         },
       });
