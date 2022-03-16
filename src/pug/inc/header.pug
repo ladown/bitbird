@@ -23,10 +23,10 @@ header.header
       a.header__logo(href="/") 
         img(src=`${imgPath}/icons/logo.svg` alt="logo-icon" loading="lazy")
       nav.header__nav
-        a(href="#") Главная
+        a(href="/") Главная
         a(href="#") Гарантия\возврат
-        a(href="#") Контакты
-        a(href="#" data-catalog="open-btn") 
+        a(href="/contact.html") Контакты
+        a(href="/catalog-outer.html" data-catalog="open-btn") 
           span Каталог
           svg(width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg")
             path(d="M4 6L0.535899 -6.52533e-07L7.4641 -4.68497e-08L4 6Z" fill="#303239")
@@ -38,7 +38,7 @@ header.header
             img.header__search-icon(src=`${imgPath}/icons/search-icon.svg` alt="search-icon" loading="lazy")
             img.header__search-icon-active(src=`${imgPath}/icons/search-icon-active.svg` alt="search-icon" loading="lazy")
         .header__cart
-          a.header__cart-btn(href="#") 
+          a.header__cart-btn(href="/basket.html") 
             img(src=`${imgPath}/icons/cart-icon.svg` alt="cart-icon" loading="lazy")
           .header__cart-info 
             .header__cart-price 8 564 000 р
@@ -58,7 +58,7 @@ header.header
             img.header__search-icon(src=`${imgPath}/icons/search-icon.svg` alt="search-icon" loading="lazy")
             img.header__search-icon-active(src=`${imgPath}/icons/search-icon-active.svg` alt="search-icon" loading="lazy")
         .header__cart
-          a.header__cart-btn(href="#") 
+          a.header__cart-btn(href="/basket.html") 
             svg(width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg")
               path(
                 fill-rule="evenodd"
@@ -70,53 +70,53 @@ header.header
             .header__cart-count 20 товаров
     .header__menu
       nav.header__nav
-        a(href="#") Главная
+        a(href="/") Главная
         a(href="#") Гарантия\возврат
         .header-mob__catalog 
-          a(href="#" data-catalog-mob="open-btn") 
+          a(href="/catalog-outer.html" data-catalog-mob="open-btn") 
             span Каталог
             img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
           .header-mob__catalog-block
             .header-mob__catalog-item
-              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="/catalog.html" data-catalog-accordion="open-btn")
                 span Майнинг фермы
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
-                a(href="#") Фермы на NVIDIA
-                a(href="#") Фермы на AMD
+                a(href="/catalog.html") Фермы на NVIDIA
+                a(href="/catalog.html") Фермы на AMD
             .header-mob__catalog-item
-              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="/catalog.html" data-catalog-accordion="open-btn")
                 span Видеокарты
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
-                a(href="#") Видеокарты на NVIDIA
-                a(href="#") Видеокарты на AMD
+                a(href="/catalog.html") Видеокарты на NVIDIA
+                a(href="/catalog.html") Видеокарты на AMD
             .header-mob__catalog-item
-              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn") 
+              a.header-mob__catalog-btn(href="/catalog.html" data-catalog-accordion="open-btn") 
                 span Готовые тушки
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
-                a(href="#") Видеокарты на NVIDIA
-                a(href="#") Видеокарты на AMD
+                a(href="/catalog.html") Видеокарты на NVIDIA
+                a(href="/catalog.html") Видеокарты на AMD
             .header-mob__catalog-item
-              a.header-mob__catalog-btn(href="#" data-catalog-accordion="open-btn")
+              a.header-mob__catalog-btn(href="/catalog.html" data-catalog-accordion="open-btn")
                 span Комплектующие
                 img(src=`${imgPath}icons/arr-down.svg` alt="arrow-down-icon")
               .header-mob__catalog-links
-                a(href="#") Аппаратные кошельки
-                a(href="#") Райзера и переходники
-                a(href="#") Реобасы
-                a(href="#") Умные розетки
-                a(href="#") Ваттметры
-                a(href="#") Ватдоги
-                a(href="#") Блоки питания
-                a(href="#") Охлаждение
-                a(href="#") Материнские платы
-                a(href="#") Жесткие диски для майнинга
-                a(href="#") Оперативная память
-                a(href="#") Процессоры
-                a(href="#") Корпусы
-        a(href="#") Каталог
+                a(href="/catalog.html") Аппаратные кошельки
+                a(href="/catalog.html") Райзера и переходники
+                a(href="/catalog.html") Реобасы
+                a(href="/catalog.html") Умные розетки
+                a(href="/catalog.html") Ваттметры
+                a(href="/catalog.html") Ватдоги
+                a(href="/catalog.html") Блоки питания
+                a(href="/catalog.html") Охлаждение
+                a(href="/catalog.html") Материнские платы
+                a(href="/catalog.html") Жесткие диски для майнинга
+                a(href="/catalog.html") Оперативная память
+                a(href="/catalog.html") Процессоры
+                a(href="/catalog.html") Корпусы
+        a(href="/catalog-outer.html") Каталог
         a(href="#") Доставка
       .header__contact
         a.header__contact-link(href="#") 
@@ -132,50 +132,6 @@ header.header
           img(src=`${imgPath}/icons/whatsapp-icon.svg` alt="whatsapp-icon" loading="lazy")
         a(href="#")
           img(src=`${imgPath}/icons/telegram-icon.svg` alt="telegram-icon" loading="lazy")
-  //- .header__catalog(data-catalog="block")
-  //-   .header__catalog-overlay(data-catalog="overlay")
-  //-   .header__catalog-wrap
-  //-     button.header__catalog-close(data-catalog="close-btn")
-  //-       svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
-  //-         rect(x="28.4016" y="0.000244141" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(45 28.4016 0.000244141)" fill="#B8B7B7")
-  //-         rect(x="0.000244141" y="3.55029" width="5.02074" height="40.1659" rx="2.51037" transform="rotate(-45 0.000244141 3.55029)" fill="#B8B7B7")
-  //-     .header__catalog-title Каталог
-  //-     .header__catalog-items
-  //-       .header__catalog-column
-  //-         a.header__catalog-label(href="#") Майнинг фермы
-  //-         .header__catalog-links 
-  //-           a.header__catalog-link(href="#") Фермы на NVIDIA
-  //-           a.header__catalog-link(href="#") Фермы на AMD
-  //-         a.header__catalog-label(href="#") Видеокарты
-  //-         .header__catalog-links 
-  //-           a.header__catalog-link(href="#") Видеокарты NVIDIA
-  //-           a.header__catalog-link(href="#") Видеокарты AMD
-  //-         a.header__catalog-label(href="#") Готовые тушки
-  //-       .header__catalog-column
-  //-         a.header__catalog-label(href="#") Комплектующие
-  //-         .header__catalog-links.header__catalog-links-columns
-  //-           .header__catalog-column
-  //-             a.header__catalog-link(href="#") Аппаратные кошельки
-  //-             a.header__catalog-link(href="#") Райзера и переходники
-  //-             a.header__catalog-link(href="#") Реобасы
-  //-             a.header__catalog-link(href="#") Умные розетки
-  //-             a.header__catalog-link(href="#") Ваттметры
-  //-             a.header__catalog-link(href="#") Ватдоги
-  //-             a.header__catalog-link(href="#") Блоки питания
-  //-             a.header__catalog-link(href="#") Охлаждение
-  //-           .header__catalog-column
-  //-             a.header__catalog-link(href="#") Материнские платы
-  //-             a.header__catalog-link(href="#") Жесткие диски для майнинга
-  //-             ul.header__catalog-list
-  //-               li 
-  //-                 a.header__catalog-link(href="#") HDD для майнинга
-  //-               li 
-  //-                 a.header__catalog-link(href="#") SSD NVME для майнинга
-  //-               li 
-  //-                 a.header__catalog-link(href="#") SSD для майнинга
-  //-             a.header__catalog-link(href="#") Оперативная память
-  //-             a.header__catalog-link(href="#") Процессоры
-  //-             a.header__catalog-link(href="#") Корпусы
   .header__catalog(data-catalog="block")
     .header__catalog-overlay(data-catalog="overlay")
     .header__catalog-wrap
@@ -186,37 +142,37 @@ header.header
       .header__catalog-title Каталог
       .header__catalog-items
         .header__catalog-item
-          a.header__catalog-label(href="#") Майнинг фермы
+          a.header__catalog-label(href="/catalog-outer.html") Майнинг фермы
           .header__catalog-links 
-            a.header__catalog-link(href="#") Фермы на NVIDIA
-            a.header__catalog-link(href="#") Фермы на AMD
+            a.header__catalog-link(href="/catalog-outer.html") Фермы на NVIDIA
+            a.header__catalog-link(href="/catalog-outer.html") Фермы на AMD
         .header__catalog-item
-          a.header__catalog-label(href="#") Видеокарты
+          a.header__catalog-label(href="/catalog-outer.html") Видеокарты
           .header__catalog-links 
-            a.header__catalog-link(href="#") Видеокарты NVIDIA
-            a.header__catalog-link(href="#") Видеокарты AMD
+            a.header__catalog-link(href="/catalog-outer.html") Видеокарты NVIDIA
+            a.header__catalog-link(href="/catalog-outer.html") Видеокарты AMD
         .header__catalog-item
-          a.header__catalog-label(href="#") Готовые тушки
+          a.header__catalog-label(href="/catalog-outer.html") Готовые тушки
         .header__catalog-item.header__catalog-item-span
-          a.header__catalog-label(href="#") Комплектующие
+          a.header__catalog-label(href="/catalog-outer.html") Комплектующие
           .header__catalog-links.header__catalog-links-columns
-            a.header__catalog-link(href="#") Аппаратные кошельки
-            a.header__catalog-link(href="#") Райзера и переходники
-            a.header__catalog-link(href="#") Реобасы
-            a.header__catalog-link(href="#") Умные розетки
-            a.header__catalog-link(href="#") Ваттметры
-            a.header__catalog-link(href="#") Ватдоги
-            a.header__catalog-link(href="#") Блоки питания
-            a.header__catalog-link(href="#") Охлаждение
-            a.header__catalog-link(href="#") Материнские платы
-            a.header__catalog-link(href="#") Жесткие диски для майнинга
+            a.header__catalog-link(href="/catalog-outer.html") Аппаратные кошельки
+            a.header__catalog-link(href="/catalog-outer.html") Райзера и переходники
+            a.header__catalog-link(href="/catalog-outer.html") Реобасы
+            a.header__catalog-link(href="/catalog-outer.html") Умные розетки
+            a.header__catalog-link(href="/catalog-outer.html") Ваттметры
+            a.header__catalog-link(href="/catalog-outer.html") Ватдоги
+            a.header__catalog-link(href="/catalog-outer.html") Блоки питания
+            a.header__catalog-link(href="/catalog-outer.html") Охлаждение
+            a.header__catalog-link(href="/catalog-outer.html") Материнские платы
+            a.header__catalog-link(href="/catalog-outer.html") Жесткие диски для майнинга
             ul.header__catalog-list
               li 
-                a.header__catalog-link(href="#") HDD для майнинга
+                a.header__catalog-link(href="/catalog-outer.html") HDD для майнинга
               li 
-                a.header__catalog-link(href="#") SSD NVME для майнинга
+                a.header__catalog-link(href="/catalog-outer.html") SSD NVME для майнинга
               li 
-                a.header__catalog-link(href="#") SSD для майнинга
-            a.header__catalog-link(href="#") Оперативная память
-            a.header__catalog-link(href="#") Процессоры
-            a.header__catalog-link(href="#") Корпусы
+                a.header__catalog-link(href="/catalog-outer.html") SSD для майнинга
+            a.header__catalog-link(href="/catalog-outer.html") Оперативная память
+            a.header__catalog-link(href="/catalog-outer.html") Процессоры
+            a.header__catalog-link(href="/catalog-outer.html") Корпусы

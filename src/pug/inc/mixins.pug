@@ -11,7 +11,7 @@ mixin links(links)
 mixin category(good)
   .category
     .category__descr
-      a.category__caption(href="#") #{ good.caption }
+      a.category__caption(href="/catalog.html") #{ good.caption }
       .category__count #{ good.count }
     img.category__img(src=`${good.img}` alt=`${good.caption}` loading="lazy")
 
@@ -24,10 +24,10 @@ mixin cart(good, i, slider)
             .cart__label.cart__label_green hit
           if good.isSale
             .cart__label.cart__label_red #{ good.salePercent }
-      a.cart__img(href="#") 
+      a.cart__img(href="/card.html") 
         img(src=`${imgPath}goods/good-${i + 1}.png` alt=`${good.caption}` loading="lazy")
       .cart__descr
-        a.cart__caption(href="#")  #{ good.caption }
+        a.cart__caption(href="/card.html")  #{ good.caption }
         if good.prevPrice
           .cart__price
             .cart__price-old #{ good.prevPrice }
@@ -36,7 +36,7 @@ mixin cart(good, i, slider)
           .cart__price
             .cart__price-new #{ good.price }
         if good.isLinked
-          a.cart__btn.cart__link(href="#") 
+          a.cart__btn.cart__link(href="/card.html") 
             svg(width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg")
               path(
                 d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM31.2071 8.70711C31.5976 8.31658 31.5976 7.68342 31.2071 7.29289L24.8431 0.928932C24.4526 0.538408 23.8195 0.538408 23.4289 0.928932C23.0384 1.31946 23.0384 1.95262 23.4289 2.34315L29.0858 8L23.4289 13.6569C23.0384 14.0474 23.0384 14.6805 23.4289 15.0711C23.8195 15.4616 24.4526 15.4616 24.8431 15.0711L31.2071 8.70711ZM1 9H30.5V7H1V9Z"
@@ -57,10 +57,10 @@ mixin cart(good, i, slider)
             .cart__label.cart__label_green hit
           if good.isSale
             .cart__label.cart__label_red #{ good.salePercent }
-      a.cart__img(href="#") 
+      a.cart__img(href="/card.html") 
         img(src=`${imgPath}goods/good-${i + 1}.png` alt=`${good.caption}` loading="lazy")
       .cart__descr
-        a.cart__caption(href="#")  #{ good.caption }
+        a.cart__caption(href="/card.html")  #{ good.caption }
         if good.prevPrice
           .cart__price
             .cart__price-old #{ good.prevPrice }
@@ -69,7 +69,7 @@ mixin cart(good, i, slider)
           .cart__price
             .cart__price-new #{ good.price }
         if good.isLinked
-          a.cart__btn.cart__link(href="#") 
+          a.cart__btn.cart__link(href="/card.html") 
             svg(width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg")
               path(
                 d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM31.2071 8.70711C31.5976 8.31658 31.5976 7.68342 31.2071 7.29289L24.8431 0.928932C24.4526 0.538408 23.8195 0.538408 23.4289 0.928932C23.0384 1.31946 23.0384 1.95262 23.4289 2.34315L29.0858 8L23.4289 13.6569C23.0384 14.0474 23.0384 14.6805 23.4289 15.0711C23.8195 15.4616 24.4526 15.4616 24.8431 15.0711L31.2071 8.70711ZM1 9H30.5V7H1V9Z"
@@ -85,10 +85,10 @@ mixin cart(good, i, slider)
 
 mixin basket(good)
   .basket__item
-    a.basket__item-img(href="#") 
+    a.basket__item-img(href="/card.html") 
       img(src=`${good.img}` alt=`${good.caption}`) 
     .basket__item-descr
-      a.basket__item-caption(href="#")  #{ good.caption }
+      a.basket__item-caption(href="/card.html")  #{ good.caption }
       .basket__item-counter 
         button.basket__item-counter-btn
           svg(width="26" height="4" viewBox="0 0 26 4" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -163,42 +163,42 @@ mixin banners(title, slider)
       if slider
         .banners__slider.swiper(data-banners="slider")
           .swiper-wrapper
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service-mining.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Майнинг под ключ
               picture.banners__item-bg
                 source(srcset=`${imgPath}banners/card-1-mob.png` media="(max-width: 576px)")
                 img(src=`${imgPath}banners/card-1.png` alt="card-img" loading="lazy")
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Сборка ферм
               picture.banners__item-bg
                 source(srcset=`${imgPath}banners/card-2-mob.png` media="(max-width: 576px)")
                 img(src=`${imgPath}banners/card-2.png` alt="card-img" loading="lazy")
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Ремонт фермы
               picture.banners__item-bg
                 source(srcset=`${imgPath}banners/card-3-mob.png` media="(max-width: 576px)")
                 img(src=`${imgPath}banners/card-3.png` alt="card-img" loading="lazy")
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service-consultation.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Консультацуия
               picture.banners__item-bg
                 source(srcset=`${imgPath}banners/card-4-mob.png` media="(max-width: 576px)")
                 img(src=`${imgPath}banners/card-4.png` alt="card-img" loading="lazy")
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Разгон видеокарт
               picture.banners__item-bg
                 source(srcset=`${imgPath}banners/card-5-mob.png` media="(max-width: 576px)")
                 img(src=`${imgPath}banners/card-5.png` alt="card-img" loading="lazy")
-            a.banners__item.swiper-slide(href="#")
+            a.banners__item.swiper-slide(href="/service.html")
               .banners__item-descr 
                 .banners__item-label Услуги
                 h3.banners__item-caption Сборка ферм
@@ -207,14 +207,14 @@ mixin banners(title, slider)
                 img(src=`${imgPath}banners/card-6.png` alt="card-img" loading="lazy")
       else
         .banners__content
-          a.banners__item(href="#")
+          a.banners__item(href="/service.html")
             .banners__item-descr 
               .banners__item-label Услуги
               h3.banners__item-caption Майнинг под ключ
             picture.banners__item-bg
               source(srcset=`${imgPath}banners/card-1-mob.png` media="(max-width: 576px)")
               img(src=`${imgPath}banners/card-1.png` alt="card-img" loading="lazy")
-          a.banners__item(href="#")
+          a.banners__item(href="/service.html")
             .banners__item-descr 
               .banners__item-label Услуги
               h3.banners__item-caption Сборка ферм

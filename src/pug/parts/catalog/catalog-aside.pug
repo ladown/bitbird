@@ -1,5 +1,75 @@
-aside.catalog-aside
-  button.catalog-aside__btn Фильтр
+aside.catalog-aside(data-catalog-aside="block")
+  button.catalog-aside__btn(data-catalog-aside="open-filter") Фильтр
   .catalog-aside__block
     .catalog-aside__title Фильтр
-    .catalog-aside__items 
+    form.catalog-aside-form(action="#")
+      .catalog-aside__items
+        .catalog-aside__item 
+          button.catalog-aside__item-label(type="button" data-catalog-aside="item")
+            svg(width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.28575 1.14004C1.60134 0.908082 2.04905 0.970762 2.28575 1.28004L6 6.13334L9.71425 1.28004C9.95095 0.970762 10.3987 0.908082 10.7142 1.14004C11.0298 1.372 11.0938 1.81076 10.8571 2.12003L6.57142 7.72C6.43653 7.89626 6.22482 8 6 8C5.77518 8 5.56347 7.89626 5.42858 7.72L1.1429 2.12003C0.906206 1.81076 0.970165 1.372 1.28575 1.14004Z"
+                fill="#6F5CEA"
+                stroke="#6F5CEA"
+                stroke-width="0.5"
+                stroke-linecap="round"
+                stroke-linejoin="round")
+            span Цена
+          .catalog-aside__item-subblock
+            .catalog-aside__item-inputs(data-catalog-aside="range-inputs")
+              input(type="text" value="")
+              .catalog-aside__item-inputs-divider -
+              input(type="text" value="")
+            .catalog-aside__item-range
+              div(data-catalog-aside="range-slider")
+        .catalog-aside__item
+          button.catalog-aside__item-label(type="button" data-catalog-aside="item")
+            svg(width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.28575 1.14004C1.60134 0.908082 2.04905 0.970762 2.28575 1.28004L6 6.13334L9.71425 1.28004C9.95095 0.970762 10.3987 0.908082 10.7142 1.14004C11.0298 1.372 11.0938 1.81076 10.8571 2.12003L6.57142 7.72C6.43653 7.89626 6.22482 8 6 8C5.77518 8 5.56347 7.89626 5.42858 7.72L1.1429 2.12003C0.906206 1.81076 0.970165 1.372 1.28575 1.14004Z"
+                fill="#6F5CEA"
+                stroke="#6F5CEA"
+                stroke-width="0.5"
+                stroke-linecap="round"
+                stroke-linejoin="round")
+            span Бренд
+          .catalog-aside__item-subblock
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="Asus")
+              span Asus
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="NVIDIA GeForse GTX 1650")
+              span NVIDIA GeForse GTX 1650
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="Dell")
+              span Dell
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="COLORFUL")
+              span COLORFUL
+        .catalog-aside__item
+          button.catalog-aside__item-label(type="button" data-catalog-aside="item")
+            svg(width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M1.28575 1.14004C1.60134 0.908082 2.04905 0.970762 2.28575 1.28004L6 6.13334L9.71425 1.28004C9.95095 0.970762 10.3987 0.908082 10.7142 1.14004C11.0298 1.372 11.0938 1.81076 10.8571 2.12003L6.57142 7.72C6.43653 7.89626 6.22482 8 6 8C5.77518 8 5.56347 7.89626 5.42858 7.72L1.1429 2.12003C0.906206 1.81076 0.970165 1.372 1.28575 1.14004Z"
+                fill="#6F5CEA"
+                stroke="#6F5CEA"
+                stroke-width="0.5"
+                stroke-linecap="round"
+                stroke-linejoin="round")
+            span Графический процессор
+          .catalog-aside__item-subblock
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="AMD")
+              span AMD
+            label.catalog-aside__item-checkbox
+              input(type="checkbox" value="NVIDIA")
+              span NVIDIA
+      .catalog-aside__footer
+        button.catalog-aside__footer-btn.catalog-aside__footer-btn_full(type="submit") Применить
+        button.catalog-aside__footer-btn.catalog-aside__footer-btn_outline(type="button" data-catalog-aside="close-filter") Отменить

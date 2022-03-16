@@ -25,6 +25,10 @@ module.exports = {
             ignore: ["backgrounds/*.*"],
           },
         },
+        {
+          from: `${paths.src}/robots.txt`,
+          to: `${paths.build}/robots.txt`,
+        },
       ],
     }),
     ...pugTemplates.map((file) => {
